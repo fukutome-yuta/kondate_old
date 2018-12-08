@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_211450) do
     t.text "menu_name"
     t.text "url"
     t.date "date"
-    t.integer "check"
+    t.boolean "check"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

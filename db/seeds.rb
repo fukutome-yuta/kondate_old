@@ -5,6 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first
-Menu.create(menu_name:'sample_menu_1', url:'sample1@url', date:'2018-12-05', check:'0')
-Menu.create(menu_name:'サンプルメニュー２', url:'sample1@url', date:'2018-12-12', check:'0')
-Menu.create(menu_name:'さんぷるめにゅー３', url:'sample1@url', date:'2018-12-21', check:'0')
+Menu.create(menu_name:'sample_menu_1', url:'sample1@url', date:'2018-12-05', check:'true')
+Menu.create(menu_name:'サンプルメニュー２', url:'sample1@url', date:'2018-12-12', check:'false')
+Menu.create(menu_name:'さんぷるめにゅー３', url:'sample1@url', date:'2018-12-21', check:'false')

@@ -4,7 +4,7 @@ class CreateMenus < ActiveRecord::Migration[5.2]
       t.text :menu_name
       t.text :url
       t.date :date
-      t.integer :check
+      t.boolean :check
 
       t.timestamps
     end

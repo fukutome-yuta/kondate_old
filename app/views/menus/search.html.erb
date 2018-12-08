@@ -1,11 +1,11 @@
-<h1>メニューリストから検索</h1>
-<p>
-<%= form_tag(controller: "menus", action: "search") do %>
-    <%= text_field_tag("input") %>
+<h2>メニューリストから検索</h2>
+<p>料理名または食材名で検索してください
+<%= form_tag(controller: "menus", action: "find") do %>
+    <%= text_field_tag("keyword") %>
     <%= submit_tag("検索") %>
 <% end %>
 </p>
-<p>
+<p>登録されている全てのメニューを表示します</p>
 <%= button_to "全メニュー表示", {controller: "menus", action: "search"} %>
 <pre>
 <table>
