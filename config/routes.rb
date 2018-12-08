@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'menus/search'
   post 'menus/search'
+  post 'menus', to: 'menus#search'
   get 'menus/edit'
   get 'users/index'
   devise_for :users

@@ -1,6 +1,10 @@
 class MenusController < ApplicationController
   def search
-    @data = Menu.all
+    if request.post? then
+      @data = Menu.all
+    else
+      render "search"
+    end
   end
 
   def edit

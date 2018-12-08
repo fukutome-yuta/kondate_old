@@ -1,15 +1,24 @@
 <h1>メニューリストから検索</h1>
-<p>Find me in app/views/menus/search.html.erb</p>
+<p>
+<%= form_tag(controller: "menus", action: "search") do %>
+    <%= text_field_tag("input") %>
+    <%= submit_tag("検索") %>
+<% end %>
+</p>
+<p>
+<%= button_to "全メニュー表示", {controller: "menus", action: "search"} %>
 <pre>
 <table>
-    <% @data.each do |obj| %>
-    <tr>
-        <td><%= obj.id %></td>
-        <td><%= obj.menu_name %></td>
-        <td><%= obj.url %></td>
-        <td><%= obj.date %></td>
-        <td><%= obj.check %></td>
-    </tr>
+    <% if @data.present? %>
+        <% @data.each do |obj| %>
+        <tr>
+            <td><%= obj.id %></td>
+            <td><%= obj.menu_name %></td>
+            <td><%= obj.url %></td>
+            <td><%= obj.date %></td>
+            <td><%= obj.check %></td>
+        </tr>
+        <% end %>
     <% end %>
 </table>
 </pre>
