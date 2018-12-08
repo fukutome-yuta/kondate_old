@@ -1,0 +1,15 @@
+<h1>メニューリストから検索</h1>
+<p>Find me in app/views/menus/search.html.erb</p>
+<pre>
+<table>
+    <% @data.each do |obj| %>
+    <tr>
+        <td><%= obj.id %></td>
+        <td><%= obj.menu_name %></td>
+        <td><%= obj.url %></td>
+        <td><%= obj.date %></td>
+        <td><%= obj.check %></td>
+    </tr>
+    <% end %>
+</table>
+</pre>

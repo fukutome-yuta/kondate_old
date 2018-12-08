@@ -1,0 +1,15 @@
+<div align="center"><h1>献立作成アプリ</h1></div>
+    <div class="navbar">
+      <ul class="navul">
+        <li class="navli"><%= link_to "ホーム", destroy_user_session_path, method: :delete ,class: "navbtn" %></li>
+        <li class="navli"><%= link_to "使い方", destroy_user_session_path, method: :delete ,class: "navbtn" %></li>
+        <li class="navli"><%= link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "navbtn" %></li>
+      </ul>
+    </nav>
+    <div>
+      <ul>
+        <li><%= link_to "レシピ検索", menus_search_path %></li>
+        <li><%= link_to "使い方" %></li>
+        <li><%= link_to "ログアウト" %></li>
+      </ul>
+    </div>
