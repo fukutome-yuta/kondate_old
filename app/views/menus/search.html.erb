@@ -1,6 +1,6 @@
 <h2>メニューリストから検索</h2>
 <p>料理名または食材名で検索してください
-<%= form_tag(controller: "menus", action: "find") do %>
+<%= form_tag( controller: "menus", action: "find" ) do %>
     <%= text_field_tag("keyword") %>
     <%= submit_tag("検索") %>
 <% end %>

@@ -10,7 +10,7 @@ class MenusController < ApplicationController
   def find
     @data = Array.new
     if request.post? then
-      @data = Menu.where('menu_name like ?', "%#{params[:keyword]}%")
+      @data = Menu.where('menu_name like ?', "%#{ params[:keyword] }%")
       render "search"
     end  
   end
