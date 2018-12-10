@@ -15,7 +15,9 @@ class MenusController < ApplicationController
     end  
   end
 
-
+  def new
+    
+  end 
   def edit
   end
 end

@@ -16,7 +16,7 @@
             <td><%= obj.menu_name %></td>
             <td><%= obj.url %></td>
             <td><%= obj.date %></td>
-            <td><%= obj.check %></td>
+            <td><%= check_box_tag :test1,obj.check,{:checked => obj.check} %></td>
         </tr>
         <% end %>
     <% end %>

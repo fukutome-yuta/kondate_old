@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post 'menus', to: 'menus#find'
   post 'menus/find'
   get 'users/index'
+  get 'menus/edit'
+  post 'menus/new'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
