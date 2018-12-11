@@ -19,5 +19,6 @@ class MenusController < ApplicationController
     
   end 
   def edit
+    render "edit"
   end
 end
