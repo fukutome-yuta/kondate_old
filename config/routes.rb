@@ -8,7 +8,15 @@ Rails.application.routes.draw do
   post 'menus/find'
   get 'users/index'
   get 'menus/edit'
+  post 'menus/edit'
   post 'menus/new'
+  get 'menus/end'
+  post 'menus/end'
+  get 'menus/update'
+  post 'menus/update'
+  patch 'menus/update'
+  get 'menus/delete'
+  post 'menus/delete'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

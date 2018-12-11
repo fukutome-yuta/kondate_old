@@ -1,33 +1,30 @@
 <h2>メニューリスト編集</h2>
-<tr>
-<td>料理名で検索</td>
-<td>
-<%= form_tag( controller: "menus", action: "find" ) do %>
-    <%= text_field_tag("keyword") %>
-    <%= submit_tag("検索") %>
-<% end %>
-</td>
-</tr>
-<tr>
-<td>全てのメニューを表示</td>
-<td>
-<%= button_to "全メニュー表示", {controller: "menus", action: "search"} %>
-</td>
-</tr>
 <tr>新規作成
 <%= button_to "作成", {controller: "menus", action: "new"} %>
 </tr>
 <pre>
 <table>
     <% if @data.present? %>
-        <% @data.each do |obj| %>
-        <tr>
-            <td><%= obj.id %></td>
-            <td><%= obj.menu_name %></td>
-            <td><%= obj.url %></td>
-            <td><%= obj.date %></td>
-            <td><%= check_box 'cocked', '', {:checked => obj.check}, true, false %></td>
-        </tr>
+        <%= form_for(@data, url:{controller: "menus", action: "update", id:@data.id}) do |f|%>
+            <tr>
+                <th>料理名</th>
+                <td><%= f.text_field :menu_name %></td>
+            </tr>            
+            <tr>
+                <th>レシピリンク</th>
+                <td><%= f.text_field :url %></td>
+            </tr>
+            <tr>
+                <th>レシピリンク</th>
+                <td><%= f.text_field :date %></td>
+            </tr>
+            <tr>
+                <th>レシピリンク</th>
+                <td><%= f.check_box :check %></td>
+            </tr>
+            <tr>
+            <%= submit_tag("更新") %><%= button_to "削除", {controller: "menus", action: "delete"} %>
+            </tr>
         <% end %>
     <% end %>
 </table>
