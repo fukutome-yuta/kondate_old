@@ -17,6 +17,7 @@
             <td><%= obj.url %></td>
             <td><%= obj.date %></td>
             <td><%= check_box 'cocked', '', {:checked => obj.check}, true, false %></td>
+            <td><%= button_to "編集", {controller: "menus", action: "edit", :id => obj.id} %></td>
         </tr>
         <% end %>
     <% end %>
