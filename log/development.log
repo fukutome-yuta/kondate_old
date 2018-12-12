@@ -4782,3 +4782,2683 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 06:35:48 +0900
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 407ms (Views: 348.5ms | ActiveRecord: 33.0ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 06:35:50 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"QWCeF7EPGKCiOAWWgjk4mVd3suc72vSikREFZqLpqovb2ESoKzIeQKKLvV77tyWE04CfsksKjD541N9uWG3wuA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.8ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (128.1ms)
+Completed 200 OK in 475ms (Views: 320.5ms | ActiveRecord: 102.5ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 06:35:52 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"7KiECXpfWOG82swLOJxXeDHav7ZGB8Dym88Lmdrvv1x2EF624GJeAbxpdMNBEkpltS2S4zbXuG5yCtGRIGvlbw==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:19
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 312ms (Views: 306.0ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-12 06:36:16 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"commit"=>"更新", "utf8"=>"✓", "authenticity_token"=>"MuRyA0f3zCg+4uRAwFmUlcx6XpT/v/9EcF2BfHXs0zcQcPWiUOhLigODXz8QQ/sIAyVEThlm8iCHR+OwsoIgzg==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"https://delishkitchen.tv/recipes/155445174732849644"}, "id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.5.0) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 06:44:30 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 380ms (Views: 326.7ms | ActiveRecord: 29.7ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 06:44:32 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"ccywS7knTKA229cb4sF6ygPaQ6pADZPPwpS2EYl1lMPrdGr0IxpKQDZob9ObT2fXhy1u/zDd61MrUWwZc/HO8A=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (41.5ms)
+Completed 200 OK in 360ms (Views: 288.3ms | ActiveRecord: 22.9ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 06:44:34 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"bJjBkJjRkxxWUIy4FncutDphB5va1d4Ku4S4hWp0tr32IBsvAuyV/FbjNHBv+TOpvpYqzqoFppZSQWKNkPDsjg==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:19
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 313ms (Views: 305.4ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-12 06:44:58 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"commit"=>"更新", "utf8"=>"✓", "authenticity_token"=>"sNkHwKGBsqJY8mB7zA0P7/sxGNyOhbx4hNLSMY529jKSTYBhtp41AGWT2wQcF2ByNG4CBmhcsRxzyLD9SRgFyw==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"sample1@url", "date"=>"", "check"=>"0"}, "id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.5.0) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 06:45:21 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 360ms (Views: 309.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 22:50:18 +0900
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (80.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (104.2ms)
+Completed 500 Internal Server Error in 739ms (ActiveRecord: 53.6ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    20:         </tr>
+    21:     <% end %>
+    22: <% else %>
+    23:     <%= form_for(@data, url:{controller: "menus", action: "add"}) do |f|%>
+    24:         <table>
+    25:             <tr>
+    26:                 <th>料理名</th>
+  
+app/views/menus/edit.html.erb:23:in `_app_views_menus_edit_html_erb__415878420_64249320'
+Started GET "/users/index" for 127.0.0.1 at 2018-12-12 22:50:32 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 2694ms (Views: 2374.7ms | ActiveRecord: 74.0ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 22:50:52 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 410ms (Views: 404.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 22:50:55 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"bAslbTAxx/a863III5KHOnJWS/wiXg+WvVj3MK2yHtjSxBw7ut0zKOQ945wUMZFCavZYnK+Yyf7ilOmA6iD00A=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.8ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (2541.4ms)
+Completed 200 OK in 2916ms (Views: 2727.0ms | ActiveRecord: 130.3ms)
+
+
+Started POST "/menus/find" for 127.0.0.1 at 2018-12-12 22:51:18 +0900
+Processing by MenusController#find as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FxUmJY4iJZDY/ZO2q+50a7D970+izJmkuMb1aUudYo2NrfyaFB8jcNhOK37SYGl2NArCGtIc4ThRAy9hsRk4vg==", "keyword"=>"肉じゃが", "commit"=>"検索"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (149.4ms)[0m  [1m[34mSELECT `menus`.* FROM `menus` WHERE (menu_name like '%肉じゃが%')[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (159.6ms)
+Completed 200 OK in 764ms (Views: 610.4ms | ActiveRecord: 149.9ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 22:51:21 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"/qMqt38icgFDSSD9sOj0QVEfg8l4vdkzhh/NuwTgg/lkG/AI5R904UP6mDXJZulc1eiunAhtoa9v2hez/mTZyg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 338ms (Views: 289.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 22:51:23 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"hMvwFAHcexbOD6oWmJOSmU83kP0fKT38+9GMiaUpBgUecyqrm+F99s68Et7hHY+Ey8C9qG/5RWASFFaBX61cNg==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.6ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:19
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (141.9ms)
+Completed 200 OK in 456ms (Views: 449.3ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-12 22:52:04 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g+yYMCNpNMGRFirT2pI1HcUEBrTAdP+zumzigG5F5IAZVEKPuVQyIZGlkhujHCgAQfMr4bCkhy9TqTiIlMG+sw==", "menu"=>{"menu_name"=>"カレーライス", "url"=>"http://sample.com"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.8ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:24
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.5ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 1)):
+  
+app/controllers/menus_controller.rb:25:in `update'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 22:54:38 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 478ms (Views: 304.0ms | ActiveRecord: 148.5ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 22:54:45 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"kL9a12s/r+hjYrK0c4RJDkwlVEXyKS6BZHvQgdtnwSgKB4Bo8QKpCGPRCnwKClQTyNJ5EIL5Vh2NvgqJIeObGw=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (135.7ms)
+Completed 200 OK in 505ms (Views: 339.3ms | ActiveRecord: 116.6ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 22:54:46 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"jTbWIzJnEYiNDaFYLTI2DhGqniHpKf4i1SK0qxtX/CYXjgycqFoXaI2+GZBUvCsTlV2zdJn5hr48526j4dOmFQ==", "id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:19
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 342ms (Views: 333.7ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-12 22:55:13 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"43T+w+FgK6eHMr/H1iRqK9MLMxHvQL79h1CQHw4kBy15zCR8e10tR4eBBw+vqnc2V/weRJ+QxmFulUoX9KBdHg==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"ンhttps://delishkitchen.tv/recipes/155445174732849644"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (1.1ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:25
+  [1m[36mMenu Update (1372.2ms)[0m  [1m[33mUPDATE `menus` SET `menu_name` = 'ゴルゴンゾーラポテトグラタン', `url` = 'ンhttps://delishkitchen.tv/recipes/155445174732849644', `updated_at` = '2018-12-12 13:55:13' WHERE `menus`.`id` = 1[0m
+  ↳ app/controllers/menus_controller.rb:25
+  [1m[35m (597.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:25
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 2577ms (Views: 427.1ms | ActiveRecord: 1971.2ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 22:55:18 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"8Y7rWrDvDTT5t9phWPTPuGiZEdS43nDrZnnNELKBjAxrNjHlKtIL1PkEYqkhetKl7G48gcgOCHePvBcYSAXWPw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 363ms (Views: 307.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 22:55:55 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"lAkabNW4h5bll7zMgy/ts2/vxvsCelz1wtYRO6aC37kOscDTT4WBduUkBAT6ofCu6xjrrnKqJGkrE8szXAaFig==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:19
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 298ms (Views: 291.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 22:55:59 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"I7w6RBMytf7Zl7/uG2RlQ1DM6t+1OL81l3BEYvK5c5C5BOD7iQ+zHtkkByZi6nhe1DvHisXox6l+tZ5qCD0pow=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+No template found for MenusController#new, rendering head :no_content
+Completed 204 No Content in 7733ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 22:57:59 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 412ms (Views: 297.0ms | ActiveRecord: 92.2ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 22:58:05 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"a6nYewkyMW9x83UENwQqpG3ii01EakVpPiKY8JRNR2/xEQLEkw83j3FAzcxOije56RWmGDS6PfXX50L4bskdXA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (246.6ms)
+Completed 200 OK in 613ms (Views: 336.2ms | ActiveRecord: 224.1ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 22:58:07 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"UqvZZvW+ddAaE6Eoey+PqEV1WWSlzPTbNU2GBbq8jYPIEwPZb4NzMBqgGeACoZK1wYJ0MdUcjEfciFwNQDjXsA==", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:19
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 296ms (Views: 288.8ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-12 22:58:11 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cewozn7ndwe8xaXDNqj3dKLNowqosh/upHxrEhpt0qjrVPJx5Npx57x2HQtPJuppJjqOX9hiZ3JNubEa4OmImw==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"https://delishkitchen.tv/recipes/155445174732849644"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:25
+  [1m[36mMenu Update (647.1ms)[0m  [1m[33mUPDATE `menus` SET `url` = 'https://delishkitchen.tv/recipes/155445174732849644', `updated_at` = '2018-12-12 13:58:11' WHERE `menus`.`id` = 1[0m
+  ↳ app/controllers/menus_controller.rb:25
+  [1m[35m (131.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:25
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1087ms (Views: 293.0ms | ActiveRecord: 780.0ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 22:58:14 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"0VaA7ZLeW14bGiEjX56BGw1lDJGAOVdr0/m9Aqoci7ZL7lpSCONdvhupmesmEJwGiZIhxPDpL/c6PGcKUJjRhQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (1.4ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 381ms (Views: 327.9ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 22:58:16 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"mnOQcPtEADyfirPf8R8apbV5i+KP2F8oJEz3g8PU30wAy0rPYXkG3J85CxeIkQe4MY6mt/8IJ7TNiS2LOVCFfw==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:19
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 337ms (Views: 329.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 22:58:18 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"gYaMmlXKbkenBu6zOYLYd5EteZpdcvxt5fAHSZDDOMYbPlYlz/dop6e1VntADMVqFdpUzy2ihPEMNd1Bakdi9Q=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (50.3ms)
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    20:         </tr>
+    21:     <% end %>
+    22: <% else %>
+    23:     <%= form_for(@data, url:{controller: "menus", action: "add"}) do |f|%>
+    24:         <table>
+    25:             <tr>
+    26:                 <th>料理名</th>
+  
+app/views/menus/edit.html.erb:23:in `_app_views_menus_edit_html_erb__415878420_108996380'
+app/controllers/menus_controller.rb:29:in `new'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:09:27 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 363ms (Views: 301.9ms | ActiveRecord: 32.5ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:09:32 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"7tnNg1ODf25agP39d8G2hpaIMet+HvHNve57finwEQN0YRc8yb55jlozRTUOT6ubEn8cvg7OiVFUK6F203RLMA=="}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (1.4ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (66.9ms)
+Completed 200 OK in 482ms (Views: 372.5ms | ActiveRecord: 47.5ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:09:34 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"FWC+P5tqBZUgBhQqztU15NfXRIO/NvWxjd1KeP+B6+yP2GSAAVcDdSC1rOK3Wyj5UyBp1s/mjS1kGJBwBQWx3w==", "id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.6ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 306ms (Views: 294.7ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:09:37 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"sSxGNSnBdMkaFFTh87WuCn6EQqIsr17vOTnlcye/clMrlJyKs/xyKRqn7CmKO7MX+nNv91x/JnPQ/D973TsoYA=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 313ms (Views: 308.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:14:15 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 271ms (Views: 266.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:14:23 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"3/jHe9prRYdhZpJchwYihyU2aAxyWD++nP9MKGlq7NhFQB3EQFZDZ2HVKpT+iD+aocFFWQKIRyJ1OpYgk+626w=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 343ms (Views: 291.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:14:27 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"QfDfR1dG8yJaLvyog5ojfCUl78xKZ7AtAi08SJ1fOjvbSAX4zXv1wlqdRGD6FD5hodLCmTq3yLHr6OZAZ9tgCA==", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.6ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 296ms (Views: 288.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:14:31 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"2zadIQFmUZhW8Onl9DCIA603kcigaVfxJ6TiKgxnku1Bjkeem1tXeFZDUS2NvpUeKcC8ndC5L23OYTgi9uPI3g=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 307ms (Views: 303.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:18:10 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 274ms (Views: 270.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:18:14 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"ac/ZXhbEtNalCqKI800MWAborHTewR/trO5auyo5Kq7zdwPhjPmyNqW5GkCKwxFFgh+BIa4RZ3FFK4Cz0L1wnQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 338ms (Views: 291.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:18:16 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"BOg8ZyebeQl0BF7atL+I7yItbWFvHyW/0rXBcql1qnaeUObYvaZ/6XS35hLNMZXyptpANB/PXSM7cBt6U/HwRQ==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 291ms (Views: 285.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:18:19 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"FobMlhV/yDHaeWJcbEb8HNnWF2PC+8ky46hqC/BAb4iMPhYpj0LO0drK2pQVyOEBXSE6NrIrsa4KbbADCsQ1uw=="}
+  [1m[36mUser Load (61.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 351ms (Views: 286.9ms | ActiveRecord: 61.0ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:18:49 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 277ms (Views: 272.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:18:52 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"/3af8/vTSK+gB/T3l6XVIaBd2oyz3wC7PZKaEXKpd99lzkVMYe5OT6C0TD/uK8g8JKr32cMPeCfUV0AZiC0t7A=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 360ms (Views: 309.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:18:54 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"0+N3ULXEVdxsgJ+j0lHKtSHh9fV9g5X/aDZaFFTWgu9JW63vL/lTPGwzJ2ur39eopRbYoA1T7WOB84AcrlLY3A==", "id"=>"1"}
+  [1m[36mUser Load (55.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (1.8ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 389ms (Views: 318.5ms | ActiveRecord: 56.8ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:18:56 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"ruhG2oM0hAO/pU8e0y63QHl6ZsaJ41k4XwIFvPfmVyE0UJxlGQmC478W99aqoKpd/Y1Lk/kzIaS2x9+0DWINEg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 300ms (Views: 295.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:19:34 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 268ms (Views: 263.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:19:37 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"/uFp/0hUu476BCAlDhJrBUoJb9bJN0K6NWBsGcd3tj1kWbNA0mm9bvq3mO13nHYYzv5Cg7nnOibcpbYRPfPsDg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 360ms (Views: 311.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:19:38 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"HYMZBDC7pWj3e9qtk7OxKy8M1wsa8aif2luwTZISRFyHO8O7qoajiPfIYmXqPaw2q/v6Xmoh0AMznmpFaJYebw==", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 321ms (Views: 310.5ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:19:50 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"bvleikeDxFCqJVJ6pq0kUSTb+Ryx2993UjybicIhO2n0QYQ13b7CsKqW6rLfIzlMoCzUScELp+u7+UGBOKVhWg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 300ms (Views: 296.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:20:24 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 264ms (Views: 260.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:20:27 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"I5CgFJTHa3idjZhGH8uv2J/h+vAk2SafYo8xlbTuNeu5KHqrDvptmJ0+II5mRbLFGxbXpVQJXgOLSuudTmpv2A=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (2.3ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 364ms (Views: 312.1ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:20:29 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"H5vUJDng1IbcfFgArIebrZVKJ7Bk30kPw9fRMa/wCBGFIw6bo93SZtzP4MjVCYawEb0K5RQPMZMqEgs5VXRSIg==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.6ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 311ms (Views: 304.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:20:32 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"oca+J+23HOiQOVMMMx3DdqhfiUmFYllLUBNisQ6N7nI7fmSYd4oaCJCK68RKk95rLKikHPWyIde51ri59Am0QQ=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 294ms (Views: 290.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:20:37 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"wWmivci+x7qSh6YUyg8rHD+Plytsj9ddyCoPahYogKtb0XgCUoPBWpI0HtyzgTYBu3i6fhxfr8Eh79Vi7KzamA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 320ms (Views: 316.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:21:12 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 273ms (Views: 269.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:21:15 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"pq/Ue2zP8LBsjFZcT03vwEAo8cdJDoQOTJz8KnjJ8Tk8Fw7E9vL2UGw/7pQ2w/LdxN/ckjne/JKlWSYigk2rCg=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 362ms (Views: 314.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:21:16 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"Zcle28bfYIkTgJ1lO2nK6SiwLL5lKVb7zfpJiP9IMZ7/cYRkXOJmaRMzJa1C59f0rEcB6xX5LmckP5OABcxrrQ==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 277ms (Views: 271.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:21:47 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"/PHiAUutRbuzl21YzpnzrZsraE8ni6HI0nZlsOG0gf5mSTi+0ZBDW7Mk1ZC3F+6wH9xFGldb2VQ7s7+4GzDbzQ=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 284ms (Views: 277.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:22:12 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"/UDsctDS5hjvpapfDzWYhmZTyv1HK4oIjWUI11403mRn+DbNSu/g+O8WEpd2u4Wb4qTnqDf78pRkoNLfpLCEVw=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.6ms)
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:22:13 +0900
+Completed 200 OK in 324ms (Views: 319.0ms | ActiveRecord: 0.6ms)
+
+
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"/UDsctDS5hjvpapfDzWYhmZTyv1HK4oIjWUI11403mRn+DbNSu/g+O8WEpd2u4Wb4qTnqDf78pRkoNLfpLCEVw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 290ms (Views: 285.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:22:14 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"I4jOslypZRGZ9KBHTUsa/GzbMTpCC3JHXm8jiTN1rEC5MBQNxpRj8ZlHGI80xQfh6CwcbzLbCtu3qvmByfH2cw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 274ms (Views: 269.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:22:19 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 289ms (Views: 284.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:22:22 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"uCsy9NDsvgMCuxXTH4n7CiOEtk5swn4Xi1icPIOTWsQik+hLStG44wIIrRtmB+YXp3ObGxwSBotinUY0eRcA9w=="}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 327ms (Views: 279.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:22:24 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"xyjcdLxJhXVuM+cq4S/rebRvQBbzy9oIRKZurEIXVM1dkAbLJnSDlW6AX+KYofZkMJhtQ4MbopStY7SkuJMO/g==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 286ms (Views: 279.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:22:29 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"qofwDseSegjVUy4vbm8JXXoA1O2LnDfSkWj3JBbFSCIwPyqxXa986NXglucX4RRA/vf5uPtMT054rS0s7EESEQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 298ms (Views: 294.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:22:31 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"zVh+NdZRhDrl26/bmpnr2ckX3hDNTj9Ra8lk/7vQ0VxX4KSKTGyC2uVoFxPjF/bETeDzRb2eR82CDL73QVSLbw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 322ms (Views: 310.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:22:57 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"yKC+hzrkFhl/bRlLXuI8VlJogA3bp00GJWioNsKFRi9SGGQ4oNkQ+X/eoYMnbCFL1p+tWKt3NZrMrXI+OAEcHA=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 299ms (Views: 295.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:22:57 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"yKC+hzrkFhl/bRlLXuI8VlJogA3bp00GJWioNsKFRi9SGGQ4oNkQ+X/eoYMnbCFL1p+tWKt3NZrMrXI+OAEcHA=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 278ms (Views: 273.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:23:56 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"tP6jS8vDMujRWFxVmLeQGtvxUeSJwuowkmNqA6FNBsYuRnn0Uf40CNHr5J3hOY0HXwZ8sfkSkqx7prALW8lc9Q=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 289ms (Views: 284.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:23:59 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"xIkxs4CYRjtyvP191Odoy9SQLg75LXe1eXhIAxMZReFeMesMGqVA23IPRbWtaXXWUGcDW4n9DymQvZIL6Z0f0g=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 306ms (Views: 301.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:24:26 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"+k8kjfK6fnVuU+reGaKvcrIo8QXO3HE13fr+Drsq3tZg9/4yaId4lW7gUhZgLLJvNt/cUL4MCak0PyQGQa6E5Q=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 333ms (Views: 328.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:28:34 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"iy1f6KrbBcSSMD3Pjfe/AzxQHZl+M03R1rLXdMi13sYRlYVXMOYDJJKDhQf0eaIeuKcwzA7jNU0/dw18MjGE9Q=="}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 291ms (Views: 284.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:29:07 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"6pixIy+jrtkF1qlEtXOmY6i9SJ8cGQN2bI8xQAyfb/9wIGuctZ6oOQVlEYzM/bt+LEplymzJe+qFSutI9hs1zA=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 297ms (Views: 292.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:29:12 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 291ms (Views: 287.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/menus/serch" for 127.0.0.1 at 2018-12-12 23:29:15 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/menus/serch"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:29:23 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"aPdHIiJL2TfE/FpY16l1XhOR5t2aHj2uRsE18bWAYPXyT52duHbf18RP4pCuJ2hDl2bLiOrORTKvBO/5TwQ6xg=="}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (1.2ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 5846ms (Views: 5708.5ms | ActiveRecord: 86.2ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:29:31 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"aNSuLNPmQtomhurqZMMdHwrYnI2xRxpPypvrLU0qzrbybHSTSdtEOiY1UiIdTQACji+x2MGXYtMjXjElt66UhQ==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 2989ms (Views: 2982.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-12 23:31:14 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"MlmgQKDDN/6PMoXUpXQ29JAA/XezgKy6Y0FWfAeK0aCo4Xr/Ov4xHo+BPRzc+ivpFPfQIsNQ1CaKhIx0/Q6Lkw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 287ms (Views: 282.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/menus/add" for 127.0.0.1 at 2018-12-12 23:31:38 +0900
+Processing by MenusController#add as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gYzTI5MXoo+7xdgaEtqi7Wpe1av/RgDR7HZjh9Ulu30nXk8VBnx9QzonOb0wdaq+3pSpD4eCioObrHnGoNJSuA==", "menu"=>{"menu_name"=>"スモークサーモンとアボカドの簡単丼", "url"=>"https://cookpad.com/recipe/1241303#share_line"}, "commit"=>"メニューリストへ追加"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:38
+  [1m[36mMenu Create (56.0ms)[0m  [1m[32mINSERT INTO `menus` (`menu_name`, `url`, `created_at`, `updated_at`) VALUES ('スモークサーモンとアボカドの簡単丼', 'https://cookpad.com/recipe/1241303#share_line', '2018-12-12 14:31:39', '2018-12-12 14:31:39')[0m
+  ↳ app/controllers/menus_controller.rb:38
+  [1m[35m (88.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:38
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (48.9ms)
+Completed 500 Internal Server Error in 425ms (ActiveRecord: 145.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    3:     <%= button_to "作成", {controller: "menus", action: "new"} %>
+    4: </tr>
+    5: <pre>
+    6: <% if @data.id.present? then %>
+    7: <table>
+    8:     <%= form_for(@data, url:{controller: "menus", action: "update", id:@data.id}) do |f|%>
+    9:         
+  
+app/views/menus/edit.html.erb:6:in `_app_views_menus_edit_html_erb__415878420_106676380'
+app/controllers/menus_controller.rb:40:in `add'
+Started GET "/menus/new" for 127.0.0.1 at 2018-12-12 23:36:07 +0900
+Processing by MenusController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 394ms (Views: 305.5ms | ActiveRecord: 42.2ms)
+
+
+Started POST "/menus/add" for 127.0.0.1 at 2018-12-12 23:36:18 +0900
+Processing by MenusController#add as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gbNDyfbGcQ6PdLoZyybzjLOkUT9tvsApoGS5rfhoOYsnYd//Y62uwg6WW77pifvfB24tmxV6SnvXvqPsjZ/QTg==", "menu"=>{"menu_name"=>"スモークサーモンとアボカドの簡単丼", "url"=>"https://cookpad.com/recipe/1241303#share_line"}, "commit"=>"メニューリストへ追加"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:38
+  [1m[36mMenu Create (142.5ms)[0m  [1m[32mINSERT INTO `menus` (`menu_name`, `url`, `created_at`, `updated_at`) VALUES ('スモークサーモンとアボカドの簡単丼', 'https://cookpad.com/recipe/1241303#share_line', '2018-12-12 14:36:18', '2018-12-12 14:36:18')[0m
+  ↳ app/controllers/menus_controller.rb:38
+  [1m[35m (58.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:38
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 518ms (Views: 297.8ms | ActiveRecord: 203.6ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:36:21 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"GcNNJDQK/8rjk2yLVofzvBV2YPxtXI56j0uy6UhMs72De5ebrjf5KuMg1EMvCe6hkYFNqR2M9uZmjmjhssjpjg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 341ms (Views: 292.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:41:36 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"xXu5DC1a7BZsuR8RfoXP2dShjR/OL5gS42pk3WRhccNfw2Ozt2fq9mwKp9kHC9LEUFagSr7/4I4Kr77VnuUr8A==", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (194.7ms)
+Completed 200 OK in 480ms (Views: 471.7ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-12 23:41:41 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LBwwoJIGDEnGUMEICe3LBCROazL06aGCv/HJU2o84yoOiLcBhRmL6/sxenfZ96SZ6xFx6BIwrOZI66ufrVIQ0w==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"https://delishkitchen.tv/recipes/155445174732849644", "date"=>"", "check"=>"false"}, "commit"=>"更新", "id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.5.0) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:42:52 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 428ms (Views: 380.1ms | ActiveRecord: 23.2ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:42:57 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"db6KiXP+s0ZpBY8nJmTGB/330qEnSbh7bDcOFECsNJvvBlA26cO1pmm2N+9f6tsaeQD/9FeZwOeF8tQcuihuqA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.8ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (104.4ms)
+Completed 200 OK in 456ms (Views: 317.9ms | ActiveRecord: 84.2ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:43:00 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"1NDaJJWFvl3Y1XGIFQ0L0gecw0T9UGtVHRJrJAnQOMVOaACbD7i4vdhmyUBsgxbPg2vuEY2AE8n017Es81Ri9g==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 310ms (Views: 303.1ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-12 23:43:02 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zFm2DNYVsRmXTfZUyx3u4jHaV3udpxc6e8i6pCE1utPuzTGtwQo2u6osTSsbB4F//oVNoXt+Gl6M0tho5ltJKg==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"https://delishkitchen.tv/recipes/155445174732849644", "date"=>"", "check"=>"false"}, "commit"=>"更新", "id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.5.0) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:46:18 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 355ms (Views: 350.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:46:21 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"FyUzWxwHsYDCDGv7s26BVys+qXNCc6AHyFVvFxCN1cGNnenkhjq3YMK/0zPK4JxKr8mEJjKj2JshkLUf6gmP8g=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 348ms (Views: 296.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-12 23:46:23 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"e1t4OSn8G+/BHTdicogCBwiz2r2hLIL6k3XEVIoJ1Lnh46KGs8EdD8Guj6oLBh8ajET36NH8+mZ6sB5ccI2Oig==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.7ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 314ms (Views: 307.4ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-12 23:46:24 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gm/3yah5XficyZFRhJl4oLCkSd6j0Ob1lp29sjEBN9E4+3Bov2baWqGoKi5Ugxc9f/tTBEUJ65Fhh99+9m/EKA==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"https://delishkitchen.tv/recipes/155445174732849644", "date"=>"", "check"=>"false"}, "commit"=>"更新", "id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.5.0) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:50:37 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 331ms (Views: 285.7ms | ActiveRecord: 23.6ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:50:40 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"mnsGozpzAJR43Bnd+UaUuBI9FNWVtwlbNzdbykeBcREAw9wcoE4GdHhvoRWAyImllso5gOVnccfe8oHCvQUrIg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (C:/Users/mokuren/kondate/app/models/menu.rb:2: syntax error, unexpected ':', expecting keyword_end
+    validates :date, allow.nil: true
+                              ^
+C:/Users/mokuren/kondate/app/models/menu.rb:3: syntax error, unexpected ':', expecting keyword_end
+...   validates :check, allow.nil: true
+...                              ^):
+  
+app/models/menu.rb:2: syntax error, unexpected ':', expecting keyword_end
+app/models/menu.rb:3: syntax error, unexpected ':', expecting keyword_end
+app/controllers/menus_controller.rb:4:in `search'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-12 23:52:11 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 337ms (Views: 289.3ms | ActiveRecord: 24.4ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-12 23:52:15 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"hMoh2eGiyV3gYMfoiDzaBEqhINSDohrXcdoEewG8s/4ecvtme5/PveDTfyDxsscZzlYNgfNyYkuYH95z+zjpzQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/menu.rb:2:in `<class:Menu>'
+app/models/menu.rb:1:in `<top (required)>'
+app/controllers/menus_controller.rb:4:in `search'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:00:27 +0900
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 347ms (Views: 295.8ms | ActiveRecord: 23.7ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:00:30 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"Q3NlUJKICbIfTgzVW54GLW9t7ocfVoqSi9hWfly/aEDZy7/vCLUPUh/9tB0iEBsw65rD0m+G8g5iHYx2pjsycw=="}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (89.6ms)
+Completed 200 OK in 470ms (Views: 341.4ms | ActiveRecord: 71.0ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-13 00:00:33 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"Ofi3IStjAAuWyz8SPkAkIWfmovxLZqzXZAYVh2LcknejQG2esV4G65Z4h9pHzjk84xGPqTu21EuNw8+PmFjIRA==", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.9ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 307ms (Views: 299.2ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-13 00:00:38 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y8Cj/IF9qlbDQKJqUDFJe6nKDoiSiADTF175YohLSj3pVCRdlmIt9P4hGRWAKybmZpUUUnRRDbfgRJuuTyW5xA==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"https://delishkitchen.tv/recipes/155445174732849644", "date"=>"", "check"=>"false"}, "commit"=>"更新", "id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.5.0) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:02:04 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 357ms (Views: 305.2ms | ActiveRecord: 29.1ms)
+
+
+Started GET "/menus/searc" for 127.0.0.1 at 2018-12-13 00:02:05 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/menus/searc"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:03:23 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"mzr6lJcRBwx3uQEpoFmWHzB02NFBnejdywgDLfLbvdsBgiArDSwB7HcKueHZ14sCtIP1hDFNkEEizdklCF/n6A=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.6ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 505ms (Views: 302.9ms | ActiveRecord: 129.6ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-13 00:03:25 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"3eSORiTSmhEI6UN4P4XsUPdVCE6pb7Bgx2K/7+w3zG5HXFT5vu+c8Qha+7BGC/FNc6IlG9m/yPwup2XnFrOWXQ==", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 295ms (Views: 288.5ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-13 00:03:27 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jJR6jyeKpQUQvfCE+UpinM5I9M9DdUKzipW5waADVVSuAP0uMJUipy3cS/spUA0BARfuFaWsT9d9j9sNZ22mrQ==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"https://delishkitchen.tv/recipes/155445174732849644"}, "commit"=>"更新", "id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+devise (4.5.0) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.2) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.2) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:04:41 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 290ms (Views: 286.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:04:44 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"gNZGjYZI+oIPaYBZr332Dc8vC1B5xEsx0i/Y1BRJc3MabpwyHHX8Yg/aOJHW8+sQS9gmBQkUM6076gLc7s0pQA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 358ms (Views: 307.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-13 00:04:47 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"daNWnGrrMtmtYr44Xsl4UJ7zLGv0ckA7+Smj0tNAkYjvG4wj8NY0Oa3RBvAnR2VNGgQBPoSiOKcQ7HnaKcTLuw==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 317ms (Views: 311.1ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-13 00:04:49 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rGdPvYxkCe48mRJr/NdWvSSDeqyZd6e4GiqSVp5hApo235UCFlkPDjwqqqOFWUugoHRX+emn3yTz70heZOVYqQ==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"https://delishkitchen.tv/recipes/155445174732849644"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (1.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:27
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.3ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/menus_controller.rb:28:in `update'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:05:18 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 347ms (Views: 288.0ms | ActiveRecord: 33.4ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:05:22 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"KGYTmp+BQsTnKtriPTl/Sl4B1F2VtUI3qLb7Bgdkmjyy3sklBbxEJOeZYipEt2JX2vb5COVlOqtBcyEO/eDADw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (1.7ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (73.7ms)
+Completed 200 OK in 440ms (Views: 325.8ms | ActiveRecord: 53.7ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-13 00:05:24 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"9XFv6UzuS6eYDTdqjtJ04hbt489Pa4t62y6HqmRpUdxvybVW1tNNR5i+j6L3XGn/khrOmj+78+Yy612inu0L7w==", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (1.1ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 326ms (Views: 318.5ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-13 00:05:26 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OUjhbmPtoSybk4dQZBj0VyUPrAZQZEK1i0O+OOE33o6j8DvR+dCnzJsgP5gdlulKofiBUyC0OilihmQwG7OEvQ==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"https://delishkitchen.tv/recipes/155445174732849644"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:27
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.5ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/menus_controller.rb:28:in `update'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:08:08 +0900
+  
+SyntaxError (C:/Users/mokuren/kondate/app/controllers/menus_controller.rb:28: syntax error, unexpected '=', expecting =>
+...j.update_attributes = { :date = '', :check = false }
+...                              ^):
+  
+app/controllers/menus_controller.rb:28: syntax error, unexpected '=', expecting =>
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:08:14 +0900
+  
+SyntaxError (C:/Users/mokuren/kondate/app/controllers/menus_controller.rb:28: syntax error, unexpected '=', expecting =>
+...j.update_attributes = { :date = '', :check = false }
+...                              ^):
+  
+app/controllers/menus_controller.rb:28: syntax error, unexpected '=', expecting =>
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:11:47 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 356ms (Views: 303.9ms | ActiveRecord: 24.4ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:11:49 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"Q4HVWNo0zYEDulGGjQw/2a1AOyajo2Kz2USzQ+VOKmDZOQ/nQAnLYQMJ6U70giLEKbcWc9NzGi8wgWlLH8pwUw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (56.9ms)
+Completed 200 OK in 447ms (Views: 355.3ms | ActiveRecord: 37.4ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-13 00:11:52 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"GQbmF5ctzsIm8bNjbzDjQJI8yDINAoNocc3AnywY67aDvjyoDRDIIiZCC6sWvv5dFsvlZ33S+/SYCBqX1pyxhQ==", "id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 322ms (Views: 312.6ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/menus/update?id=1" for 127.0.0.1 at 2018-12-13 00:11:55 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxtBMhan+934CKGI7Ahx0Gpfo70mKkhTjS3g+z8x8IzNo5uNjJr9Pfi7GUCVhmzN7qiO6Fb6MM9k6DrzxbWqvw==", "menu"=>{"menu_name"=>"ゴルゴンゾーラポテトグラタン", "url"=>"https://delishkitchen.tv/recipes/155445174732849644"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[36mMenu Update (19.1ms)[0m  [1m[33mUPDATE `menus` SET `date` = NULL, `check` = FALSE, `updated_at` = '2018-12-12 15:11:55' WHERE `menus`.`id` = 1[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:28
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 335ms (Views: 283.6ms | ActiveRecord: 32.8ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:11:57 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"IrFwLuO9sZYxFGMHbBYaFP/Zv0OkyyLlcPgr4/xERSW4CaqReYC3djGn288VmAcJey6SFtQbWnmZPfHrBsAfFg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.7ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 355ms (Views: 305.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/menus/edit?id=2" for 127.0.0.1 at 2018-12-13 00:12:25 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"9ElmMuGqUvMiotIJe7GbP3NAM/G9pJVkWiI3qdY6wy9u8byNe5dUEyIRasECP4Yi97cepM107fiz5+2hLL6ZHA==", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (1.2ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 456ms (Views: 283.5ms | ActiveRecord: 129.0ms)
+
+
+Started PATCH "/menus/update?id=2" for 127.0.0.1 at 2018-12-13 00:12:28 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PidH3SKkbJQimJ46pdUbxJ6RK/+7BIN20lLdMW87312kn51iuJlqdCIrJvLcWwbZGmYGqsvU++o7lwc5lb+Fbg==", "menu"=>{"menu_name"=>"サンプルメニュー２", "url"=>"sample1@url"}, "commit"=>"更新", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:26
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.9ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/menus_controller.rb:28:in `update'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:15:18 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 322ms (Views: 271.6ms | ActiveRecord: 26.8ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:15:24 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"MbfKz5+26uhWW5C82z8kD33AWyLVJTgE9gBbOVYlTOirDxBwBYvsCFboKHSisTkS+Td2d6X1QJgfxYExrKEW2w=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.7ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 392ms (Views: 315.1ms | ActiveRecord: 22.9ms)
+
+
+Started POST "/menus/edit?id=2" for 127.0.0.1 at 2018-12-13 00:15:27 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"ccDCx2r4sNMuxHYWLoyG6NHwXEBQxSXGfncvYL54wMvreBh48MW2My53zt5XApv1VQdxFSAVXVqXsvVoRPya+A==", "id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (1.2ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 288ms (Views: 277.9ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/menus/update?id=2" for 127.0.0.1 at 2018-12-13 00:15:57 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KgxkgpNfymDENwIV8x4TkQsfgbIdiXcNQzn/asXoe1KwtL49CWLMgMSEut2KkA6Mj+is521ZD5Gq/CViP2whYQ==", "menu"=>{"menu_name"=>"簡単棒々鶏(バンバンジー)", "url"=>"https://www.lettuceclub.net/recipe/dish/8212/?sns=line"}, "commit"=>"更新", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (3.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[36mMenu Update (0.9ms)[0m  [1m[33mUPDATE `menus` SET `menu_name` = '簡単棒々鶏(バンバンジー)', `url` = 'https://www.lettuceclub.net/recipe/dish/8212/?sns=line', `updated_at` = '2018-12-12 15:15:57' WHERE `menus`.`id` = 2[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[36mMenu Update (0.7ms)[0m  [1m[33mUPDATE `menus` SET `date` = NULL WHERE `menus`.`id` = 2[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:28
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 448ms (Views: 411.5ms | ActiveRecord: 13.6ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:15:59 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"SyDmrHaFjGlGAD93tsGjCnp8qITjSZYRPwHmeqlusBnRmDwT7LiKiUazh7/PT74X/ouF0ZOZ7o3WxDxyU+rqKg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 413ms (Views: 358.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/menus/edit?id=3" for 127.0.0.1 at 2018-12-13 00:17:40 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"p5Jv6BifKwyDW0tmbKkHaBYI84bJipiMB0IRAaFpAms9KrVXgqIt7IPo864VJxp1kv/e07la4BDuh8sJW+1YWA==", "id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.6ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 364ms (Views: 280.3ms | ActiveRecord: 39.2ms)
+
+
+Started PATCH "/menus/update?id=3" for 127.0.0.1 at 2018-12-13 00:17:59 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TvF8o05nE1Xyv6E1Xt0iu/1LkRMT4K5ITTfkIoZ6GQzUSaYc1FoVtfIMGf0nUz+meby8RmMw1tSk8j4qfP5DPw==", "menu"=>{"menu_name"=>"のせてガッツリ！うま辛エビチリ丼", "url"=>"https://delishkitchen.tv/recipes/156286595954115052"}, "commit"=>"更新", "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[36mMenu Update (0.9ms)[0m  [1m[33mUPDATE `menus` SET `menu_name` = 'のせてガッツリ！うま辛エビチリ丼', `url` = 'https://delishkitchen.tv/recipes/156286595954115052', `updated_at` = '2018-12-12 15:18:00' WHERE `menus`.`id` = 3[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[36mMenu Update (0.8ms)[0m  [1m[33mUPDATE `menus` SET `date` = NULL WHERE `menus`.`id` = 3[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:28
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 305ms (Views: 272.4ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:18:10 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"s84WTpdmQ5qA6xQgvaQ6CkadC7xJq2dOLtHSoh9VX5gpdszxDVtFeoBYrOjEKicXwmom6Tl7H9LHFAiq5dEFqw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (1.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 346ms (Views: 290.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/menus/edit?id=8" for 127.0.0.1 at 2018-12-13 00:35:28 +0900
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"8EfVG4tnq1Ljzg3wIObwt4zg/awqYHYHNv4NT5mJ+alq/w+kEVqtsuN9tThZaO2qCBfQ+VqwDpvfO9dHYw2jmg==", "id"=>"8"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.7ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 547ms (Views: 276.1ms | ActiveRecord: 212.7ms)
+
+
+Started DELETE "/menus/update?id=8" for 127.0.0.1 at 2018-12-13 00:35:31 +0900
+  
+ActionController::RoutingError (No route matches [DELETE] "/menus/update"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:37:27 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 309ms (Views: 303.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:37:29 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"Na3rH+DDj78HjGLKsF5EK09TjZu1HsqwOthI12WpZQyvFTGgev6JXwc/2gLJ0Fk2y6SgzsXOsizTHZLfny0/Pw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 353ms (Views: 303.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/edit?id=8" for 127.0.0.1 at 2018-12-13 00:37:31 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"xyV6vhV4VIIgegknx93MghM+rUkYWcqhQ8/igwrQMPZdnaABj0VSYiDJse++U9Gfl8mAHGiJsj2qCjiL8FRqxQ==", "id"=>"8"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 303ms (Views: 297.8ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/menus/delete" for 127.0.0.1 at 2018-12-13 00:37:34 +0900
+Processing by MenusController#delete as HTML
+  Parameters: {"authenticity_token"=>"XwKd3P9TEE7iseT8ACYgooMMk6oqPygWuDVbVgV2zmvFukdjZW4WruICXDR5qD2/B/u+/1rvUIpR8IFe//KUWA=="}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 6ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Menu without an ID):
+  
+app/controllers/menus_controller.rb:47:in `delete'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:40:07 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 346ms (Views: 340.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:40:09 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"8MpMEjMXyXVYE7qbv3qWROLf04/NNxXnO8CMD0Z7P8xqcpatqSrPlVigAlPG9ItZZij+2r3nbXvSBVYHvP9l/w=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 347ms (Views: 297.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-13 00:40:11 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"jzsQ3Xw/cGF5pamM4abEwnOCB2KvKVLAyLh6SREskQYVg8pi5gJ2gXkWEUSYKNnf93UqN9/5KlwhfaBB66jLNQ==", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.9ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 282ms (Views: 274.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:40:13 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 359ms (Views: 353.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:40:15 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"l0A+rtxwz0vOdDykfduUBgFk59LmpfGo6I3GyIIEsygN+OQRRk3Jq87HhGwEVYkbhZPKh5Z1iTQBSBzAeIDpGw=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 363ms (Views: 310.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/menus/edit?id=8" for 127.0.0.1 at 2018-12-13 00:40:17 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"eg5ENXwP7A8BqgHrEHwT3voK2cqCrrjkT+lLyZkBZo/gtp6K5jLq7wEZuSNp8g7Dfv30n/J+wHimLJHBY4U8vA==", "id"=>"8"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 309ms (Views: 303.8ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/menus/delete?id=8" for 127.0.0.1 at 2018-12-13 00:40:20 +0900
+Processing by MenusController#delete as HTML
+  Parameters: {"authenticity_token"=>"99UguUpBAgz5k2sk6NLjlCfrnEl8lll4cbLi5n1pUGZtbfoG0HwE7Pkg0+yRXP6JoxyxHAxGIeSYdzjuh+0KVQ==", "id"=>"8"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:48
+  [1m[36mMenu Destroy (26.5ms)[0m  [1m[31mDELETE FROM `menus` WHERE `menus`.`id` = 8[0m
+  ↳ app/controllers/menus_controller.rb:48
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:48
+No template found for MenusController#delete, rendering head :no_content
+Completed 204 No Content in 7602ms (ActiveRecord: 32.5ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:41:16 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 327ms (Views: 277.9ms | ActiveRecord: 24.4ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:41:18 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"gO1fzb9RqnRYoEsF7j6mdsX6ghtdTlEjKz6KvShE2mMaVYVyJWyslFgT882XsLtrQQ2vTi2eKb/C+1C10sCAUA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 391ms (Views: 315.1ms | ActiveRecord: 23.5ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:43:22 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"vN8ce0H2kQcDXYjtkKH1CnfyqxZOxxDIRcR6nKar5cYmZ8bE28uX5wPuMCXpL+gX8wWGQz4XaFSsAaCUXC+/9Q=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 342ms (Views: 293.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/menus/edit?id=7" for 127.0.0.1 at 2018-12-13 00:43:27 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"AP22wZgdCSFo9bG8CCrprjnhPgjkjKdwm5onBVYu/wOaRWx+AiAPwWhGCXRxpPSzvRYTXZRc3+xyX/0NrKqlMA==", "id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 323ms (Views: 316.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-13 00:43:29 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"yGKm2UndmPlwR2VP5YALNTZHjZG7nGlv+m4jFcgTge5S2nxm0+CeGXD03YecDhYosrCgxMtMEfMTq/kdMpfb3Q=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 296ms (Views: 292.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/menus/add" for 127.0.0.1 at 2018-12-13 00:44:32 +0900
+Processing by MenusController#add as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1wAyN3mLE1QiXqPF2EZn2vEWjIfDVMYc6XuYuAeHt85NuOiI47YVtCLtGw2hyHrHdeGh0rOEvoAAvkKw/QPt/Q==", "menu"=>{"menu_name"=>"気になる糖質が64%OFF！半熟卵と鶏肉のこっくり煮", "url"=>"https://delishkitchen.tv/recipes/162546045924934035"}, "commit"=>"メニューリストへ追加"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:40
+  [1m[36mMenu Create (0.6ms)[0m  [1m[32mINSERT INTO `menus` (`menu_name`, `url`, `created_at`, `updated_at`) VALUES ('気になる糖質が64%OFF！半熟卵と鶏肉のこっくり煮', 'https://delishkitchen.tv/recipes/162546045924934035', '2018-12-12 15:44:32', '2018-12-12 15:44:32')[0m
+  ↳ app/controllers/menus_controller.rb:40
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:40
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 305ms (Views: 286.6ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:44:35 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"Fa5lrfd+Z39A0S3J7hxVSja14f0lxTVz1p9EqNPZm36PFr8SbUNhn0BilQGXkkhXskLMqFUVTe8/Wp6gKV3BTQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 358ms (Views: 307.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/menus/edit?id=9" for 127.0.0.1 at 2018-12-13 00:44:37 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"zf96YpcU71/SThjnq4l7LK57/NqgMDWy44romM2Q9ydXR6DdDSnpv9L9oC/SB2YxKozRj9DgTS4KTzKQNxStFA==", "id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 311ms (Views: 305.2ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/menus/delete?id=9" for 127.0.0.1 at 2018-12-13 00:44:41 +0900
+Processing by MenusController#delete as HTML
+  Parameters: {"authenticity_token"=>"oUJob/a/sfE000R+59+QgtoQ6qkBDROboOU8NbrCiZk7+rLQbIK3ETRg/LaeUY2fXufH/HHdawdJIOY9QEbTqg==", "id"=>"9"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (1.1ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 9 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:47
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:48
+  [1m[36mMenu Destroy (4.5ms)[0m  [1m[31mDELETE FROM `menus` WHERE `menus`.`id` = 9[0m
+  ↳ app/controllers/menus_controller.rb:48
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:48
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 342ms (Views: 314.5ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:44:44 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"kuB9PdC6ZwyfDLCqOpctrHdTJFmrVuRAjXxjYXJcrMQIWKeCSodh7J+/CGJDGTCx86QJDNuGnNxkublpiNj29w=="}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 347ms (Views: 295.0ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/menus/edit?id=7" for 127.0.0.1 at 2018-12-13 00:46:13 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"6xliPVsiBPGTmRTfG+Wu3x9isI1GWb9Xju4r1P8YYcxxobiCwR8CEZMqrBdia7PCm5Wd2DaJx8tnK/HcBZw7/w==", "id"=>"7"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 347ms (Views: 333.6ms | ActiveRecord: 4.9ms)
+
+
+Started PATCH "/menus/update?id=7" for 127.0.0.1 at 2018-12-13 00:46:21 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0xy+b/zLzp2H0yHBeAcvWQcYx/ucBC1GVlukZ/11S/VJpGTQZvbIfYdgmQkBiTJEg+/qruzUVdq/nn5vB/ERxg==", "menu"=>{"menu_name"=>"スモークサーモンとアボカドの簡単丼", "url"=>"https://cookpad.com/recipe/1241303#share_line"}, "commit"=>"更新", "id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[36mMenu Update (0.7ms)[0m  [1m[33mUPDATE `menus` SET `check` = FALSE, `updated_at` = '2018-12-12 15:46:21' WHERE `menus`.`id` = 7[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:28
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 295ms (Views: 267.8ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:46:23 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"jfZzqqJgw80PX6Tr4qvjsZez44NzNB0EEqjgz3gsseAXTqkVOF3FLQ/sHCObJf6sE0TO1gPkZZj7bTrHgqjr0w=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.7ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 370ms (Views: 318.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/menus/edit?id=4" for 127.0.0.1 at 2018-12-13 00:46:26 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"Pcn8M0FxP+xh4j7SpRLauGfYksuny5mCMERK5M7VkcSncSaM20w5DGFRhhrcnMel4y+/ntcb4R7ZgZDsNFHL9w==", "id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (1.1ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 302ms (Views: 294.7ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/menus/update?id=4" for 127.0.0.1 at 2018-12-13 00:46:29 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nS5WYQnyb/BW7LN1Ihs6nbZ3lCggkijGQUxujso4yPwHlozek89pEFZfC71blSeAMoC5fVBCUFqoibSGMLySzw==", "menu"=>{"menu_name"=>"肉じゃが", "url"=>"sample1.com"}, "commit"=>"更新", "id"=>"4"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.6ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[36mMenu Update (0.7ms)[0m  [1m[33mUPDATE `menus` SET `date` = NULL, `check` = FALSE, `updated_at` = '2018-12-12 15:46:29' WHERE `menus`.`id` = 4[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:28
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 340ms (Views: 316.2ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:46:30 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"vgp6sMq+ZnWWSY/u7K/lROQQChLLFmmavBpIEO5z1rsksqAPUINglZb6NyaVIfhZYOcnR7vGEQZV35IYFPeMiA=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 374ms (Views: 321.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/menus/edit?id=7" for 127.0.0.1 at 2018-12-13 00:48:00 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"ftlCLYW1JK+YMUawRMYjB4+9kje5dKCw/KwQGat5GIDkYZiSH4giT5iC/ng9SD4aC0q/Ysmk2CwVacoRUf1Csw==", "id"=>"7"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 319ms (Views: 311.8ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/menus/delete?id=7" for 127.0.0.1 at 2018-12-13 00:48:02 +0900
+Processing by MenusController#delete as HTML
+  Parameters: {"authenticity_token"=>"2rgxWgdy8MxUw2sUymI9HiJauLig8sduck64O9+t/3tAAOvlnU/2LFRw09yz7CADpq2V7dAiv/Kbi2IzJSmlSA==", "id"=>"7"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 7 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:48
+  [1m[36mMenu Destroy (3.3ms)[0m  [1m[31mDELETE FROM `menus` WHERE `menus`.`id` = 7[0m
+  ↳ app/controllers/menus_controller.rb:48
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:48
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 308ms (Views: 287.8ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:48:06 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"xAs9vg43KTLkb+Hfa3a1xWy/rpCGLY6qPAVyzWIgx6des+cBlAov0uTcWRcS+KjY6EiDxfb99jbVwKjFmKSdlA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.7ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 346ms (Views: 299.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/menus/edit?id=6" for 127.0.0.1 at 2018-12-13 00:50:32 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"dIrKLwCQ12IWoXBFdxBCkay3xU5SwP6jDfCg5Dfy57zuMhCQmq3RghYSyI0Onl+MKEDoGyIQhj/kNXrszXa9jw==", "id"=>"6"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 322ms (Views: 314.7ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/menus/delete?id=6" for 127.0.0.1 at 2018-12-13 00:50:40 +0900
+Processing by MenusController#delete as HTML
+  Parameters: {"authenticity_token"=>"dsqdV6YZaL/xjApQ6DfgGfCMWlSyZunN0vv4erDzo2nsckfoPCRuX/E/spiRuf0EdHt3AcK2kVE7PiJySnf5Wg==", "id"=>"6"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:47
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:48
+  [1m[36mMenu Destroy (0.8ms)[0m  [1m[31mDELETE FROM `menus` WHERE `menus`.`id` = 6[0m
+  ↳ app/controllers/menus_controller.rb:48
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:48
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 318ms (Views: 299.5ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:50:42 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"JTLvckRaoM6PA5K0D+UNDWuh8h3fZduNmwUVgoYBoSi/ijXN3memLo+wKnx2axAQ71bfSK+1oxFywM+KfIX7Gw=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 378ms (Views: 325.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/menus/edit?id=5" for 127.0.0.1 at 2018-12-13 00:50:51 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"CaYmJjV1IHxJzj00shfJGXQ8CoZ9+6/VLBjeE5ctfxOTHvyZr0gmnEl9hfzLmdQE8Msn0w0r10nF3QQbbaklIA==", "id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 285ms (Views: 279.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/menus/new" for 127.0.0.1 at 2018-12-13 00:53:40 +0900
+Processing by MenusController#new as HTML
+  Parameters: {"authenticity_token"=>"5COKfjitudr7TUMVAvbiKXuWrF46hJEWw1k2a3FJ9Dd+m1DBopC/Ovv++917eP80/2GBC0pU6YoqnOxji82uBA=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 289ms (Views: 283.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-13 00:53:52 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 288ms (Views: 284.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:53:55 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"km631o877xC1eKoqAATHtrldMNGSsrACce8KK3ScAG8I1m1pFQbp8LXLEuJ5itqrPaodhOJiyJ6YKtAjjhhaXA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 360ms (Views: 309.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/menus/edit?id=5" for 127.0.0.1 at 2018-12-13 00:53:57 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"8+RPmAZ231SydXWFc+PHl9DuEMTHgHvCXc9vBRmZYEppXJUnnEvZtLLGzU0KbdqKVBk9kbdQA160CrUN4x06eQ==", "id"=>"5"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:20
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 293ms (Views: 285.7ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/menus/update?id=5" for 127.0.0.1 at 2018-12-13 00:54:10 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kTjnXt+QX7mXUDXpzpr268/aDYiiLb8SU1SGWFS0PFgLgD3hRa1ZWZfjjSG3FOv2Sy0g3dL9x466kVxQrjBmaw==", "menu"=>{"menu_name"=>"ロールキャベツ", "url"=>"sample2.com"}, "commit"=>"更新", "id"=>"5"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 5 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[36mMenu Update (3.2ms)[0m  [1m[33mUPDATE `menus` SET `date` = NULL, `updated_at` = '2018-12-12 15:54:10' WHERE `menus`.`id` = 5[0m
+  ↳ app/controllers/menus_controller.rb:28
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:28
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 308ms (Views: 281.2ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-13 00:54:12 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"eXbKMSATQreEGgDxonty64G7mAqwAL6DBvYIPID1E/PjzhCOui5EV4SpuDnb9W/2BUy1X8DQxh/vM9I0enFJwA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.4ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:13
+  Rendered menus/search.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 357ms (Views: 305.1ms | ActiveRecord: 0.9ms)
+
+

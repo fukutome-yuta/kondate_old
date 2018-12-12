@@ -3,7 +3,8 @@
     <%= button_to "作成", {controller: "menus", action: "new"} %>
 </tr>
 <pre>
-<% if @data.present? %>
+<% if @data.id.present? then %>
+
     <%= form_for(@data, url:{controller: "menus", action: "update", id:@data.id}) do |f|%>
         <table>
             <tr>
@@ -11,28 +12,34 @@
                 <td><%= f.text_field :menu_name %></td>
             </tr>            
             <tr>
-                <th>レシピurl</th>
+                <th>レシピURL</th>
                 <td><%= f.text_field :url %></td>
             </tr>
         </table>
-        <tr>
-            <%= submit_tag("更新") %><%= button_to "削除", {controller: "menus", action: "delete"} %>
+        <tr><th></th>
+            <td><%= f.submit "更新", data: { confirm: "メニューを更新しますか？"} %></td>
         </tr>
     <% end %>
+    <p><%= button_to "削除", {controller: "menus", action: "delete", id: @data.id}, data: {confirm: "本当に削除しますか？"}, method: :delete %></p>
+        
+    
 <% else %>
-    <%= form_for(@data, url:{controller: "menus", action: "add", id:@data.id}) do |f|%>
+
+    <%= form_for(@data, url:{controller: "menus", action: "add"}) do |f|%>
         <table>
             <tr>
                 <th>料理名</th>
-                <td><%= f.text_field %></td>
+                <td><%= f.text_field :menu_name %></td>
             </tr>            
             <tr>
-                <th>レシピurl</th>
-                <td><%= f.text_field %></td>
+                <th>レシピURL</th>
+                <td><%= f.text_field :url%></td>
             </tr>
-        </table>
-        <tr>
-            <%= submit_tag("ついか") %>
+        </table>     
+        <tr><th></th>
+            <td><%= submit_tag("メニューリストへ追加") %></td>
         </tr>
+    <% end %>
+    
 <% end %>
 </pre>

@@ -15,8 +15,13 @@ Rails.application.routes.draw do
   get 'menus/update'
   post 'menus/update'
   patch 'menus/update'
+  get 'menus/new'
+  post 'menus/new'
+  get 'menus/add'
+  post 'menus/add'
   get 'menus/delete'
   post 'menus/delete'
+  delete 'menus/delete'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
