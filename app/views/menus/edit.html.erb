@@ -20,6 +20,19 @@
         </tr>
     <% end %>
 <% else %>
-    
+    <%= form_for(@data, url:{controller: "menus", action: "update", id:@data.id}) do |f|%>
+        <table>
+            <tr>
+                <th>料理名</th>
+                <td><%= f.text_field :menu_name %></td>
+            </tr>            
+            <tr>
+                <th>レシピリンク</th>
+                <td><%= f.text_field :url %></td>
+            </tr>
+        </table>
+        <tr>
+            <%= submit_tag("更新") %><%= button_to "削除", {controller: "menus", action: "delete"} %>
+        </tr>
 <% end %>
 </pre>
