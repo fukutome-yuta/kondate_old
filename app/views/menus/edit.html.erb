@@ -3,9 +3,9 @@
 <%= button_to "作成", {controller: "menus", action: "new"} %>
 </tr>
 <pre>
-<table>
-    <% if @data.present? %>
-        <%= form_for(@data, url:{controller: "menus", action: "update", id:@data.id}) do |f|%>
+<% if @data.present? %>
+    <%= form_for(@data, url:{controller: "menus", action: "update", id:@data.id}) do |f|%>
+        <table>
             <tr>
                 <th>料理名</th>
                 <td><%= f.text_field :menu_name %></td>
@@ -14,18 +14,10 @@
                 <th>レシピリンク</th>
                 <td><%= f.text_field :url %></td>
             </tr>
-            <tr>
-                <th>日付</th>
-                <td><%= f.date_field :date %></td>
-            </tr>
-            <tr>
-                <th>チェック</th>
-                <td><%= f.check_box :check %></td>
-            </tr>
+            </table>
             <tr>
             <%= submit_tag("更新") %><%= button_to "削除", {controller: "menus", action: "delete"} %>
             </tr>
         <% end %>
     <% end %>
-</table>
 </pre>
