@@ -14,10 +14,12 @@
                 <th>レシピリンク</th>
                 <td><%= f.text_field :url %></td>
             </tr>
-            </table>
-            <tr>
+        </table>
+        <tr>
             <%= submit_tag("更新") %><%= button_to "削除", {controller: "menus", action: "delete"} %>
-            </tr>
-        <% end %>
+        </tr>
     <% end %>
+<% else %>
+    
+<% end %>
 </pre>
