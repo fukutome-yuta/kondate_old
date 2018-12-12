@@ -1,6 +1,6 @@
 <h2>メニューリスト編集</h2>
 <tr>新規作成
-<%= button_to "作成", {controller: "menus", action: "new"} %>
+    <%= button_to "作成", {controller: "menus", action: "new"} %>
 </tr>
 <pre>
 <% if @data.present? %>
@@ -11,7 +11,7 @@
                 <td><%= f.text_field :menu_name %></td>
             </tr>            
             <tr>
-                <th>レシピリンク</th>
+                <th>レシピurl</th>
                 <td><%= f.text_field :url %></td>
             </tr>
         </table>
@@ -20,19 +20,19 @@
         </tr>
     <% end %>
 <% else %>
-    <%= form_for(@data, url:{controller: "menus", action: "update", id:@data.id}) do |f|%>
+    <%= form_for(@data, url:{controller: "menus", action: "add", id:@data.id}) do |f|%>
         <table>
             <tr>
                 <th>料理名</th>
-                <td><%= f.text_field :menu_name %></td>
+                <td><%= f.text_field %></td>
             </tr>            
             <tr>
-                <th>レシピリンク</th>
-                <td><%= f.text_field :url %></td>
+                <th>レシピurl</th>
+                <td><%= f.text_field %></td>
             </tr>
         </table>
         <tr>
-            <%= submit_tag("更新") %><%= button_to "削除", {controller: "menus", action: "delete"} %>
+            <%= submit_tag("ついか") %>
         </tr>
 <% end %>
 </pre>
