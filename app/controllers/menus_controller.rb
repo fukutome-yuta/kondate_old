@@ -22,7 +22,7 @@ class MenusController < ApplicationController
   end
   def update
     obj = Menu.find(params[:id])
-    obj.update(menu_params)
+    obj.update(menu_params, "date = ''", "check = false")
     render "search"
   end
   def new
