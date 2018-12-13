@@ -1,21 +1,20 @@
 <h1><%= @msg %></h1>
 <h2>メニューリストから検索</h2>
-<p>料理名または食材名で検索してください
+<p>料理名または食材名で検索してください</p>
 <%= form_tag( controller: "menus", action: "find" ) do %>
     <%= text_field_tag("keyword") %>
     <%= submit_tag("検索") %>
 <% end %>
-</p>
 <p>登録されている全てのメニューを表示します</p>
 <%= button_to "全メニュー表示", {controller: "menus", action: "search"} %>
 <pre>
 <table>
     <% if @data.present? %>
+    <p>※編集ボタンをクリックすると編集画面へジャンプします</p>
         <% @data.each do |obj| %>
         <tr>
-            <td><%= obj.id %></td>
             <td><%= obj.menu_name %></td>
-            <td><%= obj.url %></td>
+            <td><%= link_to "#{obj.url}","#{obj.url}" %></td>
             <td><%= obj.date %></td>
             <td><%= check_box 'cocked', '', {:checked => obj.check}, true, false %></td>
             <td><%= button_to "編集", {controller: "menus", action: "edit", :id => obj.id} %></td>

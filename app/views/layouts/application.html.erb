@@ -8,8 +8,31 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <h1>KONDATE</h1>
+　    <ul class="nav">
+        <li><a href="#">Home</a></li>      
+        <li><a href="#">献立表</a>
+          <ul>
+            <li><a href="#">献立表作成</a></li>
+            <li><a href="#">献立表閲覧</a></li>
+          </ul>
+        </li>
+        <li><a href="#">メニューリスト</a>
+          <ul>
+            <li><a href="#">新規作成</a></li>
+            <li><a href="#">編集</a></li>
+          </ul>
+        </li>
+        <li><a href="#">レシピ検索</a>
+          <ul>
+            <li><a href="#">b1</a></li>
+            <li><a href="#">b1</a></li>
+          </ul>
+        </li>
+        <li><a href="#">使い方</a></li>
+        <li><a href="#">ログアウト</a></li>
+      </ul>
     <%= yield %>
   </body>
 </html>

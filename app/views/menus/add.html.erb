@@ -1,0 +1,17 @@
+<h2>メニューリストへ追加</h2>
+<P>リストへ追加するメニューの料理名とレシピページURLを入力してください</p>
+<%= form_for(@add_data, url:{controller: "menus", action: "add"}) do |f|%>
+    <table>
+        <tr>
+            <th>料理名</th>
+            <td><%= f.text_field :menu_name %></td>
+        </tr>            
+        <tr>
+            <th>レシピURL</th>
+            <td><%= f.text_field :url%></td>
+        </tr>
+    </table>     
+    <tr><th></th>
+        <td><%= submit_tag("メニューリストへ追加") %></td>
+    </tr>
+<% end %>
