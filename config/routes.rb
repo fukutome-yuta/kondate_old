@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'kondatelists/createKondate'
+  get 'kondatelists/updateKondate'
+  get 'kondatelists/deleteKondate'
+  get 'kondatelists/showKondate'
   get 'menus/search'
   post 'menus/search'
   post 'menus', to: 'menus#search'

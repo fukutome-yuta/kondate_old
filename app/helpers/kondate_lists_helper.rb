@@ -1,0 +1,2 @@
+module KondateListsHelper
+end

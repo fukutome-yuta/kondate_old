@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_211450) do
+ActiveRecord::Schema.define(version: 2018_12_15_075125) do
+
+  create_table "kondate_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "kondate_date"
+    t.text "kondate_name"
+    t.text "kondate_url"
+    t.integer "kondate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "menu_name"

@@ -8550,3 +8550,486 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 242ms (Views: 168.0ms | ActiveRecord: 27.5ms)
 
 
+Started GET "/users/index" for 127.0.0.1 at 2018-12-15 14:17:03 +0900
+  [1m[35m (1.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 139ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-15 14:17:04 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (836.0ms)
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-15 14:17:07 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (57.3ms)
+Completed 500 Internal Server Error in 1923ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/mokuren/kondate/tmp/cache/assets/sprockets/v3.0/KS/KS5qi5nCSuMgIjgGkP9TI3SwMGoXWt2JS-3-c5hSfLE.cache.26483740.7808.761815, C:/Users/mokuren/kondate/tmp/cache/assets/sprockets/v3.0/KS/KS5qi5nCSuMgIjgGkP9TI3SwMGoXWt2JS-3-c5hSfLE.cache)):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11:   <body>
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__244016863_63833700'
+Completed 200 OK in 4535ms (Views: 4445.7ms | ActiveRecord: 31.2ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2018-12-15 14:27:46 +0900
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 35ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-15 14:27:46 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (290.0ms)
+Completed 200 OK in 2270ms (Views: 2219.3ms | ActiveRecord: 15.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-15 14:28:06 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N0MvmyGRmm8YLRn+GkKW2Yz8YBpw1E/343ebujfYTyPU92Hirvmr2mrDP4FtAirDIdyKmi3H0jAK6ixq80pRxg==", "user"=>{"email"=>"sample@mail", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (41.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sample@mail' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/users/index
+Completed 302 Found in 1061ms (ActiveRecord: 41.5ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2018-12-15 14:28:07 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 235ms (Views: 186.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2018-12-15 14:28:09 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 227ms (Views: 180.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2018-12-15 14:28:11 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 218ms (Views: 172.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2018-12-15 14:28:12 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 257ms (Views: 210.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/menus/add" for 127.0.0.1 at 2018-12-15 14:28:14 +0900
+Processing by MenusController#add as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/add.html.erb within layouts/application
+  Rendered menus/add.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 414ms (Views: 294.1ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/menus/add" for 127.0.0.1 at 2018-12-15 14:28:16 +0900
+Processing by MenusController#add as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/add.html.erb within layouts/application
+  Rendered menus/add.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 294ms (Views: 248.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-15 14:28:22 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 378ms (Views: 283.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/menus/add" for 127.0.0.1 at 2018-12-15 14:28:37 +0900
+Processing by MenusController#add as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/add.html.erb within layouts/application
+  Rendered menus/add.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 331ms (Views: 284.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-15 14:28:51 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 319ms (Views: 274.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-15 14:28:58 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"Jsd1qLg/5X+37ZhMdbRWFALhVguRKg5iuEQGBxDSpyVz2jUBQ+jWT5SPxWu/9InA29f/wN+fO2i+bCZ1w227BA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.7ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 328ms (Views: 321.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/menus/edit?id=1" for 127.0.0.1 at 2018-12-15 14:29:05 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"nCyJmiU+BHtw+J8zIqJy2u/GwWdFNsV+LtXmtd2scUNqToZSdv+IRuP5GND2bAVVdSc/IS1khIxFK4S80UdfUA==", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.6ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:19
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 342ms (Views: 329.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/menus/add" for 127.0.0.1 at 2018-12-15 14:29:12 +0900
+Processing by MenusController#add as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/add.html.erb within layouts/application
+  Rendered menus/add.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 333ms (Views: 282.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/menus/add" for 127.0.0.1 at 2018-12-15 14:31:26 +0900
+Processing by MenusController#add as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/add.html.erb within layouts/application
+  Rendered menus/add.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 331ms (Views: 273.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/menus/add" for 127.0.0.1 at 2018-12-15 14:32:22 +0900
+Processing by MenusController#add as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/add.html.erb within layouts/application
+  Rendered menus/add.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 371ms (Views: 320.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/menus/add" for 127.0.0.1 at 2018-12-15 14:32:25 +0900
+Processing by MenusController#add as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/add.html.erb within layouts/application
+  Rendered menus/add.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 333ms (Views: 285.5ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (1.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (31.5ms)[0m  [1m[34mSELECT GET_LOCK('1483876532669789580', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateKondateLists (20181215073923)
+  [1m[35m (555.1ms)[0m  [1m[35mCREATE TABLE `kondate_lists` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `kondate_date` date, `kondate_name` text, `kondate_url` text, `kondate_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20181215073923_create_kondate_lists.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181215073923')[0m
+  ↳ bin/rails:4
+  [1m[35m (46.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('1483876532669789580')[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('1483876532669789580', 0)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateKondateLists (20181215075125)
+  [1m[35m (347.1ms)[0m  [1m[35mCREATE TABLE `kondate_lists` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `kondate_date` date, `kondate_name` text, `kondate_url` text, `kondate_id` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20181215075125_create_kondate_lists.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20181215075125')[0m
+  ↳ bin/rails:4
+  [1m[35m (39.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('1483876532669789580')[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:4
+Started GET "/users/index" for 127.0.0.1 at 2018-12-15 16:59:34 +0900
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (37.1ms)
+Completed 500 Internal Server Error in 5963ms (ActiveRecord: 24.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `kondateLists_createKondate_path' for #<#<Class:0x0000000006c405f8>:0x0000000006cc3c50>
+Did you mean?  kondate_lists_createKondate_path
+               kondate_lists_updateKondate_path
+               kondate_lists_deleteKondate_path
+               kondate_lists_createKondate_url
+               kondate_lists_showKondate_path
+               kondate_lists_updateKondate_url):
+    14:         <li><%= link_to "Home", users_index_path %></li>      
+    15:         <li><a href="#">献立表</a>
+    16:           <ul>
+    17:             <li><%= link_to "献立表作成", kondateLists_createKondate_path %></li>
+    18:             <li><%= link_to "献立表閲覧", kondateLists_showKondate_path %></li>
+    19:           </ul>
+    20:         </li>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__214409378_57053620'
+Started GET "/users/index" for 127.0.0.1 at 2018-12-15 16:59:43 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 13771ms (ActiveRecord: 1459.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `kondateLists_createKondate_path' for #<#<Class:0x0000000006c405f8>:0x000000000a9d0120>
+Did you mean?  kondate_lists_createKondate_path
+               kondate_lists_updateKondate_path
+               kondate_lists_deleteKondate_path
+               kondate_lists_createKondate_url
+               kondate_lists_showKondate_path
+               kondate_lists_updateKondate_url):
+    14:         <li><%= link_to "Home", users_index_path %></li>      
+    15:         <li><a href="#">献立表</a>
+    16:           <ul>
+    17:             <li><%= link_to "献立表作成", kondateLists_createKondate_path %></li>
+    18:             <li><%= link_to "献立表閲覧", kondateLists_showKondate_path %></li>
+    19:           </ul>
+    20:         </li>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__214409378_92706120'
+Started GET "/users/index" for 127.0.0.1 at 2018-12-15 17:05:26 +0900
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 2672ms (ActiveRecord: 28.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `kondatelists_createKondate_path' for #<#<Class:0x0000000006e6b5d0>:0x0000000006e74220>
+Did you mean?  kondate_lists_createKondate_path
+               kondate_lists_updateKondate_path
+               kondate_lists_deleteKondate_path
+               kondate_lists_createKondate_url
+               kondate_lists_showKondate_path
+               kondate_lists_updateKondate_url):
+    14:         <li><%= link_to "Home", users_index_path %></li>      
+    15:         <li><a href="#">献立表</a>
+    16:           <ul>
+    17:             <li><%= link_to "献立表作成", kondatelists_createKondate_path %></li>
+    18:             <li><%= link_to "献立表閲覧", kondatelists_showKondate_path %></li>
+    19:           </ul>
+    20:         </li>
+  
+app/views/layouts/application.html.erb:17:in `_app_views_layouts_application_html_erb__913754607_58264120'
+Started GET "/users/index" for 127.0.0.1 at 2018-12-15 17:06:22 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 412ms (Views: 276.5ms | ActiveRecord: 47.3ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-15 17:06:28 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 338ms (Views: 282.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/kondatelists/showKondate" for 127.0.0.1 at 2018-12-15 17:06:32 +0900
+Processing by KondatelistsController#showKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/showKondate.html.erb within layouts/application
+  Rendered kondatelists/showKondate.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 331ms (Views: 283.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menus/add" for 127.0.0.1 at 2018-12-15 17:07:30 +0900
+Processing by MenusController#add as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/add.html.erb within layouts/application
+  Rendered menus/add.html.erb within layouts/application (124.4ms)
+Completed 200 OK in 538ms (Views: 432.2ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-15 17:07:34 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 321ms (Views: 277.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2018-12-15 17:07:48 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 266ms (Views: 211.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-15 17:07:50 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 330ms (Views: 284.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kondatelists/showKondate" for 127.0.0.1 at 2018-12-15 17:07:52 +0900
+Processing by KondatelistsController#showKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/showKondate.html.erb within layouts/application
+  Rendered kondatelists/showKondate.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 335ms (Views: 279.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/kondatelists/showKondate" for 127.0.0.1 at 2018-12-15 17:07:53 +0900
+Processing by KondatelistsController#showKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/showKondate.html.erb within layouts/application
+  Rendered kondatelists/showKondate.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 366ms (Views: 321.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/menus/add" for 127.0.0.1 at 2018-12-15 17:07:54 +0900
+Processing by MenusController#add as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/add.html.erb within layouts/application
+  Rendered menus/add.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 375ms (Views: 325.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-15 17:08:05 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 328ms (Views: 285.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-15 17:08:26 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 378ms (Views: 334.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-16 07:58:10 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (294.4ms)
+Completed 200 OK in 650ms (Views: 577.7ms | ActiveRecord: 22.8ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-16 08:05:04 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (46.3ms)
+Completed 500 Internal Server Error in 314ms (ActiveRecord: 26.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"create", :controller=>"kondatelists"}):
+    1: <h2>献立表作成</h2>
+    2: <p>献立表の期間を入力してください</p>
+    3: <%= form_tag( controller: "kondatelists", action: "create" ) do %>
+    4: <tr>
+    5:     <th>開始日</th><td><%= date_field "startDate" %></td> ～ <th>終了日</th><td><%= date_field "endDate" %></td>
+    6: </tr>
+  
+app/views/kondatelists/createKondate.html.erb:3:in `_app_views_kondatelists_create_ondate_html_erb__851070446_87521460'

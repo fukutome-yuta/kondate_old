@@ -9,13 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <h1>KONDATE</h1>
-　    <ul class="nav">
+    <div align="center"><h1>KONDATE</h1></div>
+      <ul class="nav">
         <li><%= link_to "Home", users_index_path %></li>      
         <li><a href="#">献立表</a>
           <ul>
-            <li><%= link_to "献立表作成", menus_add_path %></li>
-            <li><%= link_to "献立表閲覧", menus_search_path %></li>
+            <li><%= link_to "献立表作成", kondatelists_createKondate_path %></li>
+            <li><%= link_to "献立表閲覧", kondatelists_showKondate_path %></li>
           </ul>
         </li>
         <li><a href="#">メニューリスト</a>
