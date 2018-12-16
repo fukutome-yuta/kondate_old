@@ -57,3 +57,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'rename'
+gem 'ruby-debug-ide'
+gem 'debase'
