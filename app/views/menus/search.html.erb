@@ -8,9 +8,16 @@
 <p>登録されている全てのメニューを表示します</p>
 <%= button_to "全メニュー表示", {controller: "menus", action: "search"} %>
 <pre>
-<table>
+<table border="1">
     <% if @data.present? %>
     <p>※編集ボタンをクリックすると編集画面へジャンプします</p>
+        <tr>
+            <th>メニュー名</th>
+            <th>レシピリンク</th>
+            <th>最後に作った日</th>
+            <th>作ったチェック</th>
+            <th>編集</th>
+        </tr>
         <% @data.each do |obj| %>
         <tr>
             <td><%= obj.menu_name %></td>

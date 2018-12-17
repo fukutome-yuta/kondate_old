@@ -4,6 +4,7 @@ class KondatelistsController < ApplicationController
       @date = []
       (Date.parse(params[:startDate])..Date.parse(params[:endDate])).each do |date|
         @date.push(date)
+        Kondatelist.create(kondate_date: date)
       end
       render "createKondate"
     end
