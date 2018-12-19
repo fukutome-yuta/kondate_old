@@ -1,3 +1,4 @@
+<h2><%= @msg %></h2>
 <h2>献立表作成</h2>
 <p>作成する献立表の期間を入力してください</p>
 <%= form_tag(controller: "kondatelists", action: "createKondate") do %>
@@ -11,7 +12,8 @@
 <table border="1">
     <% if @date.present? %>
         <% @date.each do |date| %>
-            <tr><td><%= date %></td></tr>
+            <tr><td><%= date.kondate_date %></td></tr>
         <% end %>
+        <p><%= button_to "献立表削除" data: {confirm: "献立表を削除します。よろしいですか？"} %></p>
     <% end %>
 </table>
