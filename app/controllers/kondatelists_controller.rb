@@ -1,14 +1,17 @@
 class KondatelistsController < ApplicationController
   def createKondate
     if request.post? then
-      @date = []
-      (Date.parse(params[:startDate])..Date.parse(params[:endDate])).each do |date|
-        @date.push(date)
-        Kondatelist.create(kondate_date: date)
+      @kondatelist_data = Kondatelist.all
+      
+      if @kondatelist_data.present? then
+        @msg = "すでに献立表が存在します。削除してから作り直してください！"
+      else
+        (Date.parse(params[:startDate])..Date.parse(params[:endDate])).each do |data|
+          Kondatelist.create(kondate_date: data)
+        end
       end
-    else
-      @date = Kondatelist.select("kondate_date")
     end
+    @kondatelist_data = Kondatelist.all
     render "createKondate"
   end
 
@@ -17,7 +20,7 @@ class KondatelistsController < ApplicationController
 
   def deleteKondate
     obj = Kondatelist.all
-    obj.destroy
+    obj.delete_all
     @msg = "献立表を削除しました！"
     render "createKondate"
   end

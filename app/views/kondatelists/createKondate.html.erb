@@ -9,11 +9,51 @@
 </tr>
 <%= submit_tag("献立表作成") %>
 <% end %>
+<% if @kondatelist_data.present? %>
+    <table border="1">
+        <tr>
+            <th>日付</th>
+            <th>料理名</th>
+            <th>レシピURL</th>
+            <th></th>
+        </tr>
+    <% @kondatelist_data.each do |data| %>
+        <tr>
+            <td><%= data.kondate_date %></td>
+            <td></td>
+            <td></td>
+            <td><%= button_to "削除", data: { confirm: "献立表から削除してよろしいですか？" } %></td>
+        </tr>
+    <% end %>
+    </table>
+    <p><%= button_to "献立表削除", {controller: "kondatelists", action: "deleteKondate"}, data: {confirm: "削除しますか？"}, method: :delete %></p>
+    <h3>献立表に追加するメニューを選んでください</h3>
+    <p>料理名または食材名で検索</p>
+<%= form_tag( controller: "menus", action: "find" ) do %>
+    <%= text_field_tag("keyword") %>
+    <%= submit_tag("検索", name: "CreateKondateList" ) %>
+<% end %>
+<p>全メニューリストから探す</p>
+<%= button_to "全メニュー表示", {controller: "menus", action: "search"}, name: "CreateKondateList" %>
+<pre>
 <table border="1">
-    <% if @date.present? %>
-        <% @date.each do |date| %>
-            <tr><td><%= date.kondate_date %></td></tr>
+    <% if @data.present? %>
+        <tr>
+            <th>メニュー名</th>
+            <th>レシピリンク</th>
+            <th>最後に作った日</th>
+            <th>作ったチェック</th>
+            <th>編集</th>
+        </tr>
+        <% @data.each do |obj| %>
+        <tr>
+            <td><%= obj.menu_name %></td>
+            <td><%= link_to "#{obj.url}","#{obj.url}" %></td>
+            <td><%= obj.date %></td>
+            <td><%= check_box 'cocked', '', {:checked => obj.check}, true, false %></td>
+            <td><%= button_to "編集", {controller: "menus", action: "edit", :id => obj.id} %></td>
+        </tr>
         <% end %>
-        <p><%= button_to "献立表削除" data: {confirm: "献立表を削除します。よろしいですか？"} %></p>
     <% end %>
 </table>
+<% end %>

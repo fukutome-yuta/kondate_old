@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post 'kondatelists/createKondate'
   get 'kondatelists/updateKondate'
   get 'kondatelists/deleteKondate'
-  post 'kondatelists/deleteKondate'
+  delete 'kondatelists/deleteKondate'
   get 'kondatelists/showKondate'
   get 'menus/search'
   post 'menus/search'
