@@ -2,7 +2,6 @@ class KondatelistsController < ApplicationController
   def createKondate
     if request.post? then
       @kondatelist_data = Kondatelist.all
-      
       if @kondatelist_data.present? then
         @msg = "すでに献立表が存在します。削除してから作り直してください！"
       else
@@ -12,10 +11,18 @@ class KondatelistsController < ApplicationController
       end
     end
     @kondatelist_data = Kondatelist.all
-    render "createKondate"
   end
 
   def updateKondate
+    if request.post? then
+      if params[:allmenu] then
+        @menu_data = Menu.all
+      else
+        @menu_data = Menu.where('menu_name like ?', "%#{ params[:keyword] }%")
+      end
+      @kondatelist_data = Kondatelist.all
+      render "createKondate"
+    end
   end
 
   def deleteKondate

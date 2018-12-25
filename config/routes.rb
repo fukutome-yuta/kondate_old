@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'kondatelists/createKondate'
   post 'kondatelists/createKondate'
   get 'kondatelists/updateKondate'
+  post 'kondatelists/updateKondate'
+  patch 'kondatelists/updateKondate'
   get 'kondatelists/deleteKondate'
   delete 'kondatelists/deleteKondate'
   get 'kondatelists/showKondate'

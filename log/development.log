@@ -13795,3 +13795,2346 @@ Processing by MenusController#search as HTML
 Completed 200 OK in 313ms (Views: 308.0ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/users/index" for 127.0.0.1 at 2018-12-22 12:39:51 +0900
+  [1m[35m (54.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 53ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-22 12:39:53 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (528.3ms)
+Completed 200 OK in 3007ms (Views: 2882.1ms | ActiveRecord: 78.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-22 12:40:17 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5GobOeBiQt+1r/7PHJL758tSZjxzDdo7iPio7Gb37C5fg9Els1sGV1k/Ahk+jyhKJSnH8DVmCXq9ViKX14dHqQ==", "user"=>{"email"=>"sample@mail", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (60.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sample@mail' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/users/index
+Completed 302 Found in 1110ms (ActiveRecord: 60.8ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2018-12-22 12:40:18 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 326ms (Views: 248.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-22 12:40:24 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 435ms (Views: 384.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-22 12:40:27 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"x8o8csCOQ6wUvgkTl0JvKIZI3m823zafj9DnB8kOFJWC8JrsLvahue6DQUVQuoSWUJYRxwcrSJMqxRHLoRWsog=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (36.7ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (83.2ms)
+Completed 200 OK in 488ms (Views: 408.2ms | ActiveRecord: 60.8ms)
+
+
+Started POST "/menus/edit?id=8" for 127.0.0.1 at 2018-12-22 12:40:35 +0900
+Processing by MenusController#edit as HTML
+  Parameters: {"authenticity_token"=>"l0bMSR9u/qVugeLTwLNkqbbcWYnNo0UYHZiQb01kaomTss99QvleSeVVxgev+VNkBQ1Tx5WlBsz9O5KdERRgNg==", "id"=>"8"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (0.8ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:29
+  Rendering menus/edit.html.erb within layouts/application
+  Rendered menus/edit.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 397ms (Views: 386.2ms | ActiveRecord: 1.7ms)
+
+
+Started PATCH "/menus/update?id=8" for 127.0.0.1 at 2018-12-22 12:40:53 +0900
+Processing by MenusController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M7JNgY9IrVc7ngvBjT2ycY9ICJHLyc0axLm9dj5Sr2E3Rk610t8Nu7BKLxXid4W8PJkC35PPjs4kGr+EYiKl3g==", "menu"=>{"menu_name"=>"カレーライス", "url"=>"https://cookpad.com/recipe/4724700#share_line"}, "commit"=>"更新", "id"=>"8"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mMenu Load (4.8ms)[0m  [1m[34mSELECT  `menus`.* FROM `menus` WHERE `menus`.`id` = 8 LIMIT 1[0m
+  ↳ app/controllers/menus_controller.rb:41
+  [1m[35m (7.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:42
+  [1m[36mMenu Update (66.9ms)[0m  [1m[33mUPDATE `menus` SET `menu_name` = 'カレーライス', `updated_at` = '2018-12-22 03:40:54' WHERE `menus`.`id` = 8[0m
+  ↳ app/controllers/menus_controller.rb:42
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:42
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/menus_controller.rb:43
+  [1m[36mMenu Update (16.6ms)[0m  [1m[33mUPDATE `menus` SET `check` = FALSE WHERE `menus`.`id` = 8[0m
+  ↳ app/controllers/menus_controller.rb:43
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/menus_controller.rb:43
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 519ms (Views: 352.3ms | ActiveRecord: 105.9ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-22 12:40:56 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"SBLEaQQ1mlK4HZdaFIZV5LNXLbDxo72vnGAELyhIIhVM5sddWaI6vjPJs457zGIpAIYn/qml/nt8wwbddDgoqg=="}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 394ms (Views: 382.9ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/menus/find" for 127.0.0.1 at 2018-12-22 12:41:14 +0900
+Processing by MenusController#find as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I102p6LtBK+dQ33ch7pN7bMFo0ttxIYDaRT6zvX64w4nqTWT/3qkQxaXWQjo8HogANSpBTXCxdeJt/g8qYrpsQ==", "keyword"=>"ゴルゴン", "commit"=>"検索"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (27.0ms)[0m  [1m[34mSELECT `menus`.* FROM `menus` WHERE (menu_name like '%ゴルゴン%')[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 374ms (Views: 342.2ms | ActiveRecord: 27.5ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-22 12:41:26 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"authenticity_token"=>"CWf6magRVRy3L1Cvy+WTlaauA7czBdA4ZHTM9VGqTdgNk/mt9Yb18Dz7dHukr6RYFX8J+WsDk+yE184HDdpHZw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/menus/search.html.erb:12
+  Rendered menus/search.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 353ms (Views: 345.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2018-12-23 06:14:55 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-12-23 06:14:56 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (51.8ms)
+Completed 200 OK in 436ms (Views: 434.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-12-23 06:15:19 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wsGgMfHWAqWIU/lPrQZ4u4I/M7rVyTC2knVAznzy0qHTVX/X2DfFiCOdWob48cOFNjBnaB3xSBMvvW7JZcjQDw==", "user"=>{"email"=>"sample@mail", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sample@mail' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/users/index
+Completed 302 Found in 616ms (ActiveRecord: 32.7ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2018-12-23 06:15:20 +0900
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 225ms (Views: 178.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 06:15:23 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (35.9ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (87.6ms)
+Completed 200 OK in 397ms (Views: 309.2ms | ActiveRecord: 58.8ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-23 06:15:29 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"CreateKondateList"=>"全メニュー表示", "authenticity_token"=>"9IsUxJ8oxZYL/c+AVRAWU9TsS86ZqvcFWTZSpr6Sg4wMDXwIZxC809Jr11CNgk40iGj/OktdzJgNnk5V0jV5kg=="}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (2.1ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  [1m[36mMenu Load (1.2ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:40
+  Rendered kondatelists/createKondate.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 358ms (Views: 323.5ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-23 06:43:47 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 423ms (Views: 284.0ms | ActiveRecord: 39.5ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 06:43:51 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 192ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (C:/Users/mokuren/kondate/app/views/kondatelists/createKondate.html.erb:60: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+C:/Users/mokuren/kondate/app/views/kondatelists/createKondate.html.erb:62: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/kondatelists/createKondate.html.erb:60: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/kondatelists/createKondate.html.erb:62: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/kondatelists_controller.rb:15:in `createKondate'
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 06:46:20 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 346ms (Views: 308.2ms | ActiveRecord: 31.6ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-23 06:46:24 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"CreateKondateList"=>"全メニュー表示", "authenticity_token"=>"9t+52f1nYxieAodzjSy5G6Lxm6Uk/EC/arS4tfl0Qiw+8jm/mxp9CvtITMR0YzFj+IXCpRWU3XWxD/CBbYEwhw=="}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.6ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:40
+  Rendered kondatelists/createKondate.html.erb within layouts/application (100.8ms)
+Completed 500 Internal Server Error in 495ms (ActiveRecord: 26.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Menu::ActiveRecord_Relation:0x000000000bf5dba0>
+Did you mean?  ids):
+    38: <pre>
+    39: <table border="1">
+    40:     <% if @data.present? %>
+    41:         <%= form_for(@data, url:{controller: "kondateLists", action: "updateKondate", id: @data.id, name: @kondatelist_data.kondate_date }) do |f|%>
+    42:             <tr>
+    43:                 <th>メニュー名</th>
+    44:                 <th>レシピリンク</th>
+  
+app/views/kondatelists/createKondate.html.erb:41:in `_app_views_kondatelists_create_ondate_html_erb__191219800_100299320'
+app/controllers/menus_controller.rb:7:in `search'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-23 06:51:23 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 360ms (Views: 307.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 06:51:26 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 302ms (Views: 296.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-23 06:51:29 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"CreateKondateList"=>"全メニュー表示", "authenticity_token"=>"DsjFHT2uDfjQ81uVhl6dnsY4awopdyIgbN6B6wLRlo72Tq3RxZZ0vQllQ0VezMX5mrzf/vuAGb04dp0YbnZskA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  [1m[36mMenu Load (0.6ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:40
+  Rendered kondatelists/createKondate.html.erb within layouts/application (60.3ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Menu::ActiveRecord_Relation:0x0000000007892f40>
+Did you mean?  ids):
+    38: <pre>
+    39: <table border="1">
+    40:     <% if @data.present? %>
+    41:         <%= form_for(@kondatelist_data, url:{ controller: "kondateLists", action: "updateKondate", id: @data.id, name: @kondatelist_data.kondate_date }) do |f|%>
+    42:             <tr>
+    43:                 <th>メニュー名</th>
+    44:                 <th>レシピリンク</th>
+  
+app/views/kondatelists/createKondate.html.erb:41:in `_app_views_kondatelists_create_ondate_html_erb__191219800_63212120'
+app/controllers/menus_controller.rb:7:in `search'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-23 07:14:07 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 426ms (Views: 314.7ms | ActiveRecord: 64.2ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 07:14:11 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 358ms (Views: 328.8ms | ActiveRecord: 24.9ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-23 07:14:14 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"CreateKondateList"=>"全メニュー表示", "authenticity_token"=>"5in1wonBu0uHy6ETIyKJXeA5jwDoIj12hTc/fzv4JH8er50OcfnCDl5ducP7sNE6vL079DrVBuvRnyOMV1/eYQ=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:40
+  Rendered kondatelists/createKondate.html.erb within layouts/application (89.0ms)
+Completed 500 Internal Server Error in 296ms (ActiveRecord: 23.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `kondate_date' for #<Kondatelist::ActiveRecord_Relation:0x000000000c66bd70>):
+    38: <pre>
+    39: <table border="1">
+    40:     <% if @data.present? %>
+    41:         <%= form_for(@kondatelist_data, url:{ action: "updateKondate", name: @kondatelist_data.kondate_date }) do |f|%>
+    42:             <tr>
+    43:                 <th>メニュー名</th>
+    44:                 <th>レシピリンク</th>
+  
+app/views/kondatelists/createKondate.html.erb:41:in `_app_views_kondatelists_create_ondate_html_erb__191219800_104026560'
+app/controllers/menus_controller.rb:7:in `search'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-23 07:31:46 +0900
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 508ms (Views: 412.2ms | ActiveRecord: 35.1ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 07:31:49 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.6ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 354ms (Views: 326.7ms | ActiveRecord: 24.0ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-23 07:31:52 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"CreateKondateList"=>"全メニュー表示", "authenticity_token"=>"y1J5NKVc5nx0M7KdIM3n8068PBlityMVjlNv6oEnolQz1BH4XWSfOa2lqk34X7+UEjiI7bBAGIja+3MZ7YBYSg=="}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.7ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  [1m[36mMenu Load (0.7ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:40
+  Rendered kondatelists/createKondate.html.erb within layouts/application (92.1ms)
+Completed 500 Internal Server Error in 306ms (ActiveRecord: 28.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Kondatelist::ActiveRecord_Relation:0x000000000c92f958>
+Did you mean?  to_ary
+               to_set):
+    38: <pre>
+    39: <table border="1">
+    40:     <% if @data.present? %>
+    41:         <%= form_for(@kondatelist_data, url:{ action: "updateKondate" }) do |f|%>
+    42:             <tr>
+    43:                 <th>メニュー名</th>
+    44:                 <th>レシピリンク</th>
+  
+app/views/kondatelists/createKondate.html.erb:41:in `_app_views_kondatelists_create_ondate_html_erb__191219800_105476100'
+app/controllers/menus_controller.rb:7:in `search'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-23 07:33:47 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 363ms (Views: 313.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-23 07:33:51 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 07:33:51 +0900
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.0ms)
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 428ms (Views: 344.1ms | ActiveRecord: 0.5ms)
+
+
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (67.7ms)
+Completed 200 OK in 450ms (Views: 274.7ms | ActiveRecord: 169.8ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-23 07:33:55 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"CreateKondateList"=>"全メニュー表示", "authenticity_token"=>"tEnI3oVpESihmvsK3kete6NVDBkid9xWYN8VSzxbOfZMz6ASfVFobXgM49oG1fUc/9G47fCA58s0dwm4UPzD6A=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:40
+  Rendered kondatelists/createKondate.html.erb within layouts/application (83.8ms)
+Completed 500 Internal Server Error in 287ms (ActiveRecord: 22.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Kondatelist::ActiveRecord_Relation:0x000000000c67ba68>
+Did you mean?  to_ary
+               to_set):
+    38: <pre>
+    39: <table border="1">
+    40:     <% if @data.present? %>
+    41:         <%= form_for(@kondatelist_data, url:{ controller: "kondatelists", action: "updateKondate" }) do |f|%>
+    42:             <tr>
+    43:                 <th>メニュー名</th>
+    44:                 <th>レシピリンク</th>
+  
+app/views/kondatelists/createKondate.html.erb:41:in `_app_views_kondatelists_create_ondate_html_erb__191219800_104057860'
+app/controllers/menus_controller.rb:7:in `search'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-23 07:40:59 +0900
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 378ms (Views: 302.3ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 07:41:03 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 328ms (Views: 298.6ms | ActiveRecord: 25.5ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-23 07:41:06 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"CreateKondateList"=>"全メニュー表示", "authenticity_token"=>"RFF03BidF5lcHb7kyFN9C87UZCrJiUO0ehTFVrwZ4bC81xwQ4KVu3IWLpjQQwSVsklDQ3ht+eCkuvNml0L4brg=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:40
+  Rendered kondatelists/createKondate.html.erb within layouts/application (129.0ms)
+Completed 500 Internal Server Error in 332ms (ActiveRecord: 68.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :kondate_id:Symbol):
+    47:             </tr>
+    48:             <% @data.each do |obj| %>
+    49:             <tr>
+    50:                 <%= f.hidden_field obj.id, :kondate_id %>
+    51:                 <td><%= f.label obj.menu_name, :kondate_name %></td>
+    52:                 <td><%= f.label link_to "#{obj.url}","#{obj.url}" %></td>
+    53:                 <td><%= f.select :name, @kondatelist_data.map{|t| t.kondate_date } %></td>
+  
+app/views/kondatelists/createKondate.html.erb:50:in `block (2 levels) in _app_views_kondatelists_create_ondate_html_erb__191219800_104892100'
+app/views/kondatelists/createKondate.html.erb:48:in `block in _app_views_kondatelists_create_ondate_html_erb__191219800_104892100'
+app/views/kondatelists/createKondate.html.erb:41:in `_app_views_kondatelists_create_ondate_html_erb__191219800_104892100'
+app/controllers/menus_controller.rb:7:in `search'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-23 07:42:08 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 371ms (Views: 323.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 07:42:11 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 333ms (Views: 328.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-23 07:42:14 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"CreateKondateList"=>"全メニュー表示", "authenticity_token"=>"IfRv/+/5GViyywPQS1H3bONX0L4T1G4taE+rEMaXTNDZcgczF8FgHWtdGwCTw68Lv9NkSsEjVbA857fjqjC2zg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (1.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:40
+  Rendered kondatelists/createKondate.html.erb within layouts/application (85.9ms)
+Completed 500 Internal Server Error in 289ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :kondate_id:Symbol):
+    47:             </tr>
+    48:             <% @data.each do |obj| %>
+    49:             <tr>
+    50:                 <%= f.hidden_field obj.id, :kondate_id %>
+    51:                 <td><%= f.label obj.menu_name, :kondate_name %></td>
+    52:                 <td><%= f.label link_to "#{obj.url}","#{obj.url}" %></td>
+    53:                 <td><%= f.select :name, @kondatelist_data.map{|t| t.kondate_date } %></td>
+  
+app/views/kondatelists/createKondate.html.erb:50:in `block (2 levels) in _app_views_kondatelists_create_ondate_html_erb__191219800_105346680'
+app/views/kondatelists/createKondate.html.erb:48:in `block in _app_views_kondatelists_create_ondate_html_erb__191219800_105346680'
+app/views/kondatelists/createKondate.html.erb:41:in `_app_views_kondatelists_create_ondate_html_erb__191219800_105346680'
+app/controllers/menus_controller.rb:7:in `search'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-23 07:45:44 +0900
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 448ms (Views: 397.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 07:45:47 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 318ms (Views: 313.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-23 07:45:49 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"CreateKondateList"=>"全メニュー表示", "authenticity_token"=>"z4CyjhSqHaYBfBV/1+sMUYuZok67K4xjtssLvHgpb9U3BtpC7JJk49jqDa8PeVQ21x0Wumnct/7iYxdPFI6Vyw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:40
+  Rendered kondatelists/createKondate.html.erb within layouts/application (63.7ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Kondatelist::ActiveRecord_Relation:0x000000000c95ea28>
+Did you mean?  to_ary
+               to_set):
+    45:                 <th></th>
+    46:             </tr>
+    47:             <% @data.each do |obj| %>
+    48:             <%= form_for(@kondatelist_data, url:{ controller: "kondatelists", action: "updateKondate" }) do |f|%>
+    49:             <tr>
+    50:                 <%= f.hidden_field obj.id, :kondate_id %>
+    51:                 <td><%= f.label obj.menu_name, :kondate_name %></td>
+  
+app/views/kondatelists/createKondate.html.erb:48:in `block in _app_views_kondatelists_create_ondate_html_erb__191219800_105572340'
+app/views/kondatelists/createKondate.html.erb:47:in `_app_views_kondatelists_create_ondate_html_erb__191219800_105572340'
+app/controllers/menus_controller.rb:7:in `search'
+Started GET "/menus/search" for 127.0.0.1 at 2018-12-23 07:59:55 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MenusController#search as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering menus/search.html.erb within layouts/application
+  Rendered menus/search.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 404ms (Views: 332.8ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 07:59:59 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (C:/Users/mokuren/kondate/app/views/kondatelists/createKondate.html.erb:48: syntax error, unexpected ')', expecting keyword_end
+...ts", action: "updateKondate" }) do |f|@output_buffer.safe_ap...
+...                              ^
+C:/Users/mokuren/kondate/app/views/kondatelists/createKondate.html.erb:60: syntax error, unexpected keyword_end, expecting end-of-input
+'.freeze; end 
+          ^~~):
+  
+app/views/kondatelists/createKondate.html.erb:48: syntax error, unexpected ')', expecting keyword_end
+app/views/kondatelists/createKondate.html.erb:60: syntax error, unexpected keyword_end, expecting end-of-input
+app/controllers/kondatelists_controller.rb:15:in `createKondate'
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-23 08:00:40 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 352ms (Views: 318.1ms | ActiveRecord: 29.9ms)
+
+
+Started POST "/menus/search" for 127.0.0.1 at 2018-12-23 08:00:43 +0900
+Processing by MenusController#search as HTML
+  Parameters: {"CreateKondateList"=>"全メニュー表示", "authenticity_token"=>"66l6yGQwr2WSISNE5v/D8Ulp/ktQ7+pIA76eYTm0Q2EjhPquAk2xd/dr6PMfsEuJEx2nS2GHd4LYBdZVrUExyg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  [1m[36mMenu Load (0.5ms)[0m  [1m[34mSELECT `menus`.* FROM `menus`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:40
+  Rendered kondatelists/createKondate.html.erb within layouts/application (89.3ms)
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 23.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `to_key' for #<Menu::ActiveRecord_Relation:0x000000000a863210>
+Did you mean?  to_ary
+               to_set):
+    45:                 <th></th>
+    46:             </tr>
+    47:             <% @data.each do |obj| %>
+    48:             <%= form_for(@data, url:{ controller: "kondatelists", action: "updateKondate" }) do |f|%>
+    49:             <tr>
+    50:                 <%= f.hidden_field obj.id %>
+    51:                 <td><%= f.label obj.menu_name %></td>
+  
+app/views/kondatelists/createKondate.html.erb:48:in `block in _app_views_kondatelists_create_ondate_html_erb__191219800_89372380'
+app/views/kondatelists/createKondate.html.erb:47:in `_app_views_kondatelists_create_ondate_html_erb__191219800_89372380'
+app/controllers/menus_controller.rb:7:in `search'
+Started GET "/users/index" for 127.0.0.1 at 2018-12-25 23:26:53 +0900
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (58.5ms)
+Completed 200 OK in 1826ms (Views: 1602.6ms | ActiveRecord: 55.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:27:09 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (291.7ms)
+Completed 200 OK in 719ms (Views: 668.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:27:22 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A41gLo4WNdgrhEk0eawFgEsk6ixgx+ZE0ux8gMO5KspObXO0Zk6+5m5aBikDV3Eq7Wwas/BJ+XePst9bLyfX6Q==", "startDate"=>"2018-12-02", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.6ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 1898ms (Views: 1101.3ms | ActiveRecord: 22.8ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:27:32 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A41gLo4WNdgrhEk0eawFgEsk6ixgx+ZE0ux8gMO5KspObXO0Zk6+5m5aBikDV3Eq7Wwas/BJ+XePst9bLyfX6Q==", "startDate"=>"2018-12-02", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 2113ms (Views: 1298.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:28:05 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A41gLo4WNdgrhEk0eawFgEsk6ixgx+ZE0ux8gMO5KspObXO0Zk6+5m5aBikDV3Eq7Wwas/BJ+XePst9bLyfX6Q==", "startDate"=>"2018-12-02", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 1898ms (Views: 1066.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:28:46 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (1.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (118.3ms)
+Completed 200 OK in 513ms (Views: 323.8ms | ActiveRecord: 115.5ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:30:06 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.8ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 370ms (Views: 322.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:30:12 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JmQOQq9IjFgOz6ROWk+xtU0w+7jNCsEywTQcazOquwstBBfbMA8IwVx9SbAJra+j0Ca7tJcts4Qv5hFODvYRw==", "startDate"=>"2018-12-04", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 1745ms (Views: 1009.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:30:39 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JmQOQq9IjFgOz6ROWk+xtU0w+7jNCsEywTQcazOquwstBBfbMA8IwVx9SbAJra+j0Ca7tJcts4Qv5hFODvYRw==", "startDate"=>"2018-12-04", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 1887ms (Views: 1131.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:33:39 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JmQOQq9IjFgOz6ROWk+xtU0w+7jNCsEywTQcazOquwstBBfbMA8IwVx9SbAJra+j0Ca7tJcts4Qv5hFODvYRw==", "startDate"=>"2018-12-04", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.9ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 2112ms (Views: 1159.1ms | ActiveRecord: 81.2ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:36:30 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JmQOQq9IjFgOz6ROWk+xtU0w+7jNCsEywTQcazOquwstBBfbMA8IwVx9SbAJra+j0Ca7tJcts4Qv5hFODvYRw==", "startDate"=>"2018-12-04", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 1996ms (Views: 1111.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:41:04 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JmQOQq9IjFgOz6ROWk+xtU0w+7jNCsEywTQcazOquwstBBfbMA8IwVx9SbAJra+j0Ca7tJcts4Qv5hFODvYRw==", "startDate"=>"2018-12-04", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 2067ms (Views: 1076.4ms | ActiveRecord: 90.8ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:41:24 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JmQOQq9IjFgOz6ROWk+xtU0w+7jNCsEywTQcazOquwstBBfbMA8IwVx9SbAJra+j0Ca7tJcts4Qv5hFODvYRw==", "startDate"=>"2018-12-04", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 1814ms (Views: 1002.4ms | ActiveRecord: 41.4ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:41:47 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5JmQOQq9IjFgOz6ROWk+xtU0w+7jNCsEywTQcazOquwstBBfbMA8IwVx9SbAJra+j0Ca7tJcts4Qv5hFODvYRw==", "startDate"=>"2018-12-04", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (71.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-04', '2018-12-25 14:41:48', '2018-12-25 14:41:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (16.7ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-05', '2018-12-25 14:41:48', '2018-12-25 14:41:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (2.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-06', '2018-12-25 14:41:48', '2018-12-25 14:41:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (60.1ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-07', '2018-12-25 14:41:48', '2018-12-25 14:41:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (18.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-08', '2018-12-25 14:41:48', '2018-12-25 14:41:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-09', '2018-12-25 14:41:48', '2018-12-25 14:41:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-10', '2018-12-25 14:41:48', '2018-12-25 14:41:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.6ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 2081ms (Views: 961.1ms | ActiveRecord: 283.8ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:43:27 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 354ms (Views: 304.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:43:46 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (1.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (51.3ms)
+Completed 200 OK in 566ms (Views: 447.0ms | ActiveRecord: 46.9ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:44:21 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 509ms (Views: 371.4ms | ActiveRecord: 65.2ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:44:34 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e26AQ+Ey5pkvYkS4ODnaLel6suQkitTTxwzoLPuiQLqzQwAlh0/4i0oojw/BdlJVsw7r5BXiSRkct6AYb1cyEQ==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-04", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-03', '2018-12-25 14:44:34', '2018-12-25 14:44:34')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (1.3ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-04', '2018-12-25 14:44:34', '2018-12-25 14:44:34')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.8ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 1705ms (Views: 951.1ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:45:36 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e26AQ+Ey5pkvYkS4ODnaLel6suQkitTTxwzoLPuiQLqzQwAlh0/4i0oojw/BdlJVsw7r5BXiSRkct6AYb1cyEQ==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-04", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.6ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 1827ms (Views: 967.9ms | ActiveRecord: 87.4ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:45:42 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (5.8ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 388ms (Views: 332.5ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:45:50 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"igVMgllIvz2U0Mco3Mh63qoKiRmzyh/CZkmvwMzliV1CKMzkPzWhL/GaDJ8lh/Km8H7QGYKiggi98uf0WBD79g==", "startDate"=>"2018-12-02", "endDate"=>"2018-12-03", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 1839ms (Views: 984.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:47:27 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"igVMgllIvz2U0Mco3Mh63qoKiRmzyh/CZkmvwMzliV1CKMzkPzWhL/GaDJ8lh/Km8H7QGYKiggi98uf0WBD79g==", "startDate"=>"2018-12-02", "endDate"=>"2018-12-03", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.7ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.7ms)[0m  [1m[34mSELECT  `kondatelists`.* FROM `kondatelists` LIMIT 11[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT  `kondatelists`.* FROM `kondatelists` LIMIT 11[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT  `kondatelists`.* FROM `kondatelists` LIMIT 11[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT  `kondatelists`.* FROM `kondatelists` LIMIT 11[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT  `kondatelists`.* FROM `kondatelists` LIMIT 11[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT  `kondatelists`.* FROM `kondatelists` LIMIT 11[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT  `kondatelists`.* FROM `kondatelists` LIMIT 11[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT  `kondatelists`.* FROM `kondatelists` LIMIT 11[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendered kondatelists/createKondate.html.erb within layouts/application (1428.9ms)
+Completed 500 Internal Server Error in 3047ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `createKondate_path' for #<#<Class:0x000000000d4818d8>:0x000000000c0d9150>):
+    1: <h2><%= @msg %></h2>
+    2: <h2>献立表作成</h2>
+    3: <p>作成する献立表の期間を入力してください</p>
+    4: <%= form_with url: createKondate_path do |f| %>
+    5: <tr>
+    6:     <th>開始日</th><td><%= f.date_field :startDate %></td>
+    7:     &emsp;～&emsp;
+  
+app/views/kondatelists/createKondate.html.erb:4:in `_app_views_kondatelists_create_ondate_html_erb__572267507_101109440'
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:53:34 +0900
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 556ms (Views: 451.6ms | ActiveRecord: 48.1ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:53:55 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ipaZb6mVDdHWidsqmjDKzU3xIdmiI/QRsQtxZa38qQWB9oD2NtKJSIQ7NtTJ0tTb0Odh1fgEhqdf2XxAkKADw==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-04", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 1973ms (Views: 1093.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:55:10 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 418ms (Views: 368.9ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/kondatelists/deleteKondate" for 127.0.0.1 at 2018-12-25 23:55:15 +0900
+Processing by KondatelistsController#deleteKondate as HTML
+  Parameters: {"authenticity_token"=>"J1TdPJkpZ2GgG7SpJ52y7HffrXQhkapQ0Bg73pDdeuHveV1a/1R5c8VRfx7e0jqULav0dBD5N5oLo3PqBCgISg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Destroy (5.4ms)[0m  [1m[31mDELETE FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:23
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 324ms (Views: 313.4ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:55:23 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZWI5X6a7Wc7VdM9M7T8NIhxbjNJCQV9m9A71ZcoKLICtT7k5wMZH3LA+BPsUcIVaRi/V0nMpwqwvtb1RXv9eKw==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.7ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-03', '2018-12-25 14:55:23', '2018-12-25 14:55:23')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-04', '2018-12-25 14:55:23', '2018-12-25 14:55:23')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-05', '2018-12-25 14:55:23', '2018-12-25 14:55:23')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-06', '2018-12-25 14:55:23', '2018-12-25 14:55:23')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-07', '2018-12-25 14:55:23', '2018-12-25 14:55:23')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-08', '2018-12-25 14:55:23', '2018-12-25 14:55:23')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-09', '2018-12-25 14:55:23', '2018-12-25 14:55:23')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-10', '2018-12-25 14:55:23', '2018-12-25 14:55:23')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (1.1ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 1805ms (Views: 1004.6ms | ActiveRecord: 31.0ms)
+
+
+Started GET "/kondatelists/deleteKondate" for 127.0.0.1 at 2018-12-25 23:55:37 +0900
+Processing by KondatelistsController#deleteKondate as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Destroy (3.2ms)[0m  [1m[31mDELETE FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:23
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 305ms (Views: 294.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/kondatelists/deleteKondate" for 127.0.0.1 at 2018-12-25 23:55:41 +0900
+Processing by KondatelistsController#deleteKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Destroy (1.7ms)[0m  [1m[31mDELETE FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:23
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 290ms (Views: 282.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/kondatelists/deleteKondate" for 127.0.0.1 at 2018-12-25 23:55:44 +0900
+Processing by KondatelistsController#deleteKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Destroy (0.3ms)[0m  [1m[31mDELETE FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:23
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (3.0ms)
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:55:45 +0900
+Completed 200 OK in 378ms (Views: 372.0ms | ActiveRecord: 0.9ms)
+
+
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 340ms (Views: 289.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-25 23:55:48 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.7ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 343ms (Views: 294.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:01:01 +0900
+  
+SyntaxError (C:/Users/mokuren/kondate/app/controllers/kondatelists_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/kondatelists_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:01:09 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (C:/Users/mokuren/kondate/app/controllers/kondatelists_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/kondatelists_controller.rb:29: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:03:00 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 468ms (Views: 348.5ms | ActiveRecord: 46.6ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:03:11 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cqmNG26F4JNCsm9Jr+NgEbr0a9OQZe8oBxSThnwtdWK6hA19CPj+gSf4pP5WrOhp4IAy06ENcuLcr9uy6NgHyQ==", "startDate"=>"2018-12-02", "endDate"=>"2018-12-17", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-02', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-03', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-04', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-05', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-06', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-07', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-08', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-09', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-10', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-11', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-12', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.4ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-13', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (1.1ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-14', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-15', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-16', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-17', '2018-12-25 15:03:12', '2018-12-25 15:03:12')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 2278ms (Views: 1156.9ms | ActiveRecord: 66.6ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:05:16 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (93.2ms)
+Completed 200 OK in 508ms (Views: 337.9ms | ActiveRecord: 95.2ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:05:44 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:05:44 +0900
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (1.3ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (14.6ms)
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 579ms (Views: 534.2ms | ActiveRecord: 1.9ms)
+
+
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.6ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (47.2ms)
+Completed 200 OK in 529ms (Views: 414.9ms | ActiveRecord: 68.9ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:05:50 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WJNmFLHMRKEqq1ckP3ts44UHQL04E3Zu3FFiTBXX3cYVc3WOWZTPn291GDlFgBhJI0+wIqidaV2BD8GX+Ukg5Q==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-11", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 1704ms (Views: 954.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:06:21 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:06:22 +0900
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (1.2ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (17.3ms)
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+Completed 200 OK in 841ms (Views: 795.3ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mKondatelist Load (10.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 393ms (Views: 331.2ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:06:25 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.9ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 400ms (Views: 352.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:06:27 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 386ms (Views: 337.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:06:36 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9RO0veONfT8uLB6d21D+C4ZsdjDRj9xV0VmgaNnlQq2486cnC9X2AWvyUYChq4qhICSGr0EBw2aMBwOzNXu/jg==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-12", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 1714ms (Views: 990.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:06:53 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (1.2ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 367ms (Views: 321.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:06:56 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.7ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 420ms (Views: 361.3ms | ActiveRecord: 3.6ms)
+
+
+Started DELETE "/kondatelists/deleteKondate" for 127.0.0.1 at 2018-12-26 00:07:05 +0900
+Processing by KondatelistsController#deleteKondate as HTML
+  Parameters: {"authenticity_token"=>"vQABxU+HWOoJQK426xJTHV6+yac3Wg+SVIxb8alqPvp131wh84W8mAzF6EcSxa1sCiXJmyCPwqKCIBYbsQlKUw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Destroy (3.4ms)[0m  [1m[31mDELETE FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:22
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 362ms (Views: 353.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:07:08 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 354ms (Views: 302.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:07:10 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 337ms (Views: 284.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:07:19 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VqnaLHh6xB94YeLZqXfB5D+TcE7G5bLYKsVWfN3dURSehFpKHgfaDR0rKW5QOEmcZecpTveNLxLxfh5ISSgjvw==", "startDate"=>"2018-12-10", "endDate"=>"2018-12-25", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-10', '2018-12-25 15:07:19', '2018-12-25 15:07:19')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.7ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-11', '2018-12-25 15:07:19', '2018-12-25 15:07:19')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.8ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-12', '2018-12-25 15:07:19', '2018-12-25 15:07:19')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-13', '2018-12-25 15:07:19', '2018-12-25 15:07:19')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-14', '2018-12-25 15:07:19', '2018-12-25 15:07:19')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-15', '2018-12-25 15:07:19', '2018-12-25 15:07:19')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.4ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-16', '2018-12-25 15:07:19', '2018-12-25 15:07:19')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.4ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-17', '2018-12-25 15:07:20', '2018-12-25 15:07:20')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-18', '2018-12-25 15:07:20', '2018-12-25 15:07:20')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-19', '2018-12-25 15:07:20', '2018-12-25 15:07:20')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-20', '2018-12-25 15:07:20', '2018-12-25 15:07:20')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-21', '2018-12-25 15:07:20', '2018-12-25 15:07:20')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.4ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-22', '2018-12-25 15:07:20', '2018-12-25 15:07:20')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-23', '2018-12-25 15:07:20', '2018-12-25 15:07:20')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-24', '2018-12-25 15:07:20', '2018-12-25 15:07:20')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-25', '2018-12-25 15:07:20', '2018-12-25 15:07:20')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 2421ms (Views: 1293.5ms | ActiveRecord: 65.4ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:07:26 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 344ms (Views: 298.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:08:16 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (2.3ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (48.3ms)
+Completed 200 OK in 441ms (Views: 322.8ms | ActiveRecord: 48.6ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:08:23 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e9aDWPzN8dQLTktX0fn7aqnVOaT5BTI0b3Jfnv1QaMWz+wM+mrDvxm4EgOAotnMS86FgpMhtr/60yReqaaUabg==", "startDate"=>"2018-12-04", "endDate"=>"2018-12-05", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 1688ms (Views: 960.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:08:36 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 341ms (Views: 294.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:08:39 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 347ms (Views: 295.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:10:13 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 465ms (Views: 324.8ms | ActiveRecord: 47.2ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:10:17 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 322ms (Views: 275.1ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:10:25 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yBqCEBPrsSdym9sS2dZtuPOBVuDJ8ttHSmF2LPAWrsqF+pGK+7M6GTdFlA+jLRkSVcmmf1l8xHQXP9X3HIhT6Q==", "startDate"=>"2018-12-10", "endDate"=>"2018-12-18", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 1736ms (Views: 974.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:10:33 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 343ms (Views: 294.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:10:37 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.7ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 421ms (Views: 372.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:12:00 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (132.5ms)
+Completed 200 OK in 1155ms (Views: 989.5ms | ActiveRecord: 39.5ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:12:11 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sHKBv8CHF6gN4bSPLyfPBKgyPCVPJGOymKWougVKwIR4XwHZpvoJumirfzjWaEd88kZlJX5M/nhDHuCOkb+yLw==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-05", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 2056ms (Views: 1036.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:12:34 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 375ms (Views: 328.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:12:56 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aaxabgoeCESdCGEKb3ogBoADKVPVloTZ4XeZNo9e9pqhgdoIbGMWVvhCqr2WNah+2ndwU+T+GRM6zNECG6uEMQ==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-12", "commit"=>"献立表作成"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (1.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 1880ms (Views: 1005.7ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/kondatelists/deleteKondate" for 127.0.0.1 at 2018-12-26 00:15:41 +0900
+Processing by KondatelistsController#deleteKondate as HTML
+  Parameters: {"authenticity_token"=>"aaxabgoeCESdCGEKb3ogBoADKVPVloTZ4XeZNo9e9pqhgdoIbGMWVvhCqr2WNah+2ndwU+T+GRM6zNECG6uEMQ=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Destroy (6.5ms)[0m  [1m[31mDELETE FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:22
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 431ms (Views: 365.4ms | ActiveRecord: 33.7ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:15:48 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SKlj+c7/xHCHGTcSE8XjFvbWOjqx5FpKeYJ3bcsqT3qAhOOfqILaYuJT/KXqimturKJjOoCMx4CiOT9ZX9890Q==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-11", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-03', '2018-12-25 15:15:48', '2018-12-25 15:15:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-04', '2018-12-25 15:15:48', '2018-12-25 15:15:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.8ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-05', '2018-12-25 15:15:48', '2018-12-25 15:15:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-06', '2018-12-25 15:15:48', '2018-12-25 15:15:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (1.8ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-07', '2018-12-25 15:15:48', '2018-12-25 15:15:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-08', '2018-12-25 15:15:48', '2018-12-25 15:15:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (2.8ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-09', '2018-12-25 15:15:48', '2018-12-25 15:15:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.4ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-10', '2018-12-25 15:15:48', '2018-12-25 15:15:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.4ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-11', '2018-12-25 15:15:48', '2018-12-25 15:15:48')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 1897ms (Views: 962.2ms | ActiveRecord: 81.3ms)
+
+
+Started GET "/kondatelists/deleteKondate" for 127.0.0.1 at 2018-12-26 00:15:56 +0900
+Processing by KondatelistsController#deleteKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Destroy (3.4ms)[0m  [1m[31mDELETE FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:22
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 300ms (Views: 288.0ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:15:58 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1CMkKhzv6vnvl3YsR4z03w+62dMempOVSU1chksQTBccDqRMepL064rdvZu+w3ynVc6A0y/yDl+S9hSy3+U+vA==", "startDate"=>"", "endDate"=>"", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (2.8ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 3.3ms)
+
+
+  
+ArgumentError (invalid date):
+  
+app/controllers/kondatelists_controller.rb:8:in `parse'
+app/controllers/kondatelists_controller.rb:8:in `createKondate'
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:16:05 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1CMkKhzv6vnvl3YsR4z03w+62dMempOVSU1chksQTBccDqRMepL064rdvZu+w3ynVc6A0y/yDl+S9hSy3+U+vA==", "startDate"=>"2018-12-04", "endDate"=>"2018-12-10", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (2.4ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-04', '2018-12-25 15:16:05', '2018-12-25 15:16:05')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-05', '2018-12-25 15:16:05', '2018-12-25 15:16:05')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-06', '2018-12-25 15:16:05', '2018-12-25 15:16:05')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-07', '2018-12-25 15:16:05', '2018-12-25 15:16:05')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-08', '2018-12-25 15:16:05', '2018-12-25 15:16:05')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-09', '2018-12-25 15:16:05', '2018-12-25 15:16:05')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (1.1ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-10', '2018-12-25 15:16:05', '2018-12-25 15:16:05')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 1875ms (Views: 997.7ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:16:09 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 460ms (Views: 408.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:17:24 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (83.2ms)
+Completed 200 OK in 455ms (Views: 319.0ms | ActiveRecord: 109.9ms)
+
+
+Started DELETE "/kondatelists/deleteKondate" for 127.0.0.1 at 2018-12-26 00:17:30 +0900
+Processing by KondatelistsController#deleteKondate as HTML
+  Parameters: {"authenticity_token"=>"WTQOdlPdRNB2iPLV4csnFGVKOtwi4BLzafBGNV2gXXGRGY4QNaBawhPCOWIYhK9sPz5j3BOIjzmySw4ByVUv2g=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Destroy (3.5ms)[0m  [1m[31mDELETE FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:25
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 373ms (Views: 361.5ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:17:36 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LbJVRt8CYtS0bk3K//unvMvGU/vyd4n+P2JD6TSaIzHln9UguX98xtEkhn0GtC/EkbIK+8MfFDTk2QvdoG9Rmg==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-11", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-03', '2018-12-25 15:17:36', '2018-12-25 15:17:36')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.7ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-04', '2018-12-25 15:17:36', '2018-12-25 15:17:36')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-05', '2018-12-25 15:17:36', '2018-12-25 15:17:36')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-06', '2018-12-25 15:17:36', '2018-12-25 15:17:36')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-07', '2018-12-25 15:17:36', '2018-12-25 15:17:36')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-08', '2018-12-25 15:17:36', '2018-12-25 15:17:36')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (1.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-09', '2018-12-25 15:17:36', '2018-12-25 15:17:36')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-10', '2018-12-25 15:17:36', '2018-12-25 15:17:36')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-11', '2018-12-25 15:17:36', '2018-12-25 15:17:36')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 1152ms (Views: 1037.1ms | ActiveRecord: 43.1ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/kondatelists_controller.rb:17:in `createKondate'
+Started GET "/kondatelists/deleteKondate" for 127.0.0.1 at 2018-12-26 00:18:16 +0900
+Processing by KondatelistsController#deleteKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Destroy (19.3ms)[0m  [1m[31mDELETE FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:24
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 446ms (Views: 349.3ms | ActiveRecord: 42.5ms)
+
+
+Started GET "/kondatelists/deleteKondate" for 127.0.0.1 at 2018-12-26 00:18:18 +0900
+Processing by KondatelistsController#deleteKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Destroy (0.3ms)[0m  [1m[31mDELETE FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:24
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 318ms (Views: 311.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:18:22 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 306ms (Views: 282.4ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:18:23 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 288ms (Views: 283.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:18:24 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 333ms (Views: 329.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:18:25 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.6ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 353ms (Views: 347.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:18:31 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hzpe7Ek+0syiIQAY2Fv1R/c0ZqkRKSMfIWzTbritlj/K2k12oWZZ8uf/TwWioIHtUXyWNoGnPCx8MnC1VDNrHA==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-11", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.8ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-03', '2018-12-25 15:18:31', '2018-12-25 15:18:31')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-04', '2018-12-25 15:18:31', '2018-12-25 15:18:31')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.7ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-05', '2018-12-25 15:18:31', '2018-12-25 15:18:31')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.4ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-06', '2018-12-25 15:18:31', '2018-12-25 15:18:31')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-07', '2018-12-25 15:18:31', '2018-12-25 15:18:31')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.4ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-08', '2018-12-25 15:18:31', '2018-12-25 15:18:31')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.6ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-09', '2018-12-25 15:18:31', '2018-12-25 15:18:31')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-10', '2018-12-25 15:18:31', '2018-12-25 15:18:31')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[36mKondatelist Create (0.4ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-11', '2018-12-25 15:18:31', '2018-12-25 15:18:31')[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:10
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.6ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 1086ms (Views: 973.6ms | ActiveRecord: 39.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:18:37 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 298ms (Views: 294.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:19:28 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e5btfF6LaGFhneKGI4DHiMigPB9ZgKqsGTP5bgtDNsWzu20aOPZ2cwTXKTHaz0/wktRlH2joN2bCiLFan7ZEbg==", "startDate"=>"", "endDate"=>"", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.4ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 1158ms (Views: 1151.4ms | ActiveRecord: 1.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/kondatelists_controller.rb:16:in `createKondate'
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:19:36 +0900
+Processing by KondatelistsController#createKondate as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e5btfF6LaGFhneKGI4DHiMigPB9ZgKqsGTP5bgtDNsWzu20aOPZ2cwTXKTHaz0/wktRlH2joN2bCiLFan7ZEbg==", "startDate"=>"2018-12-04", "endDate"=>"2018-12-11", "commit"=>"献立表作成"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (0.6ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 1087ms (Views: 1079.2ms | ActiveRecord: 1.8ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/kondatelists_controller.rb:16:in `createKondate'
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:19:57 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.6ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 363ms (Views: 355.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:19:58 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.5ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 356ms (Views: 350.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:21:25 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (48.2ms)
+Completed 500 Internal Server Error in 353ms (ActiveRecord: 27.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for {:url=>{:controller=>"kondatelists", :action=>"createKondate"}}:Hash):
+    1: <h2><%= @msg %></h2>
+    2: <h2>献立表作成</h2>
+    3: <p>作成する献立表の期間を入力してください</p>
+    4: <%= form_for url: { controller: "kondatelists", action: "createKondate" } do |f| %>
+    5: <tr>
+    6:     <th>開始日</th><td><%= f.date_field :startDate %></td>
+    7:     &emsp;～&emsp;
+  
+app/views/kondatelists/createKondate.html.erb:4:in `_app_views_kondatelists_create_ondate_html_erb__825883858_105245500'
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:28:49 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (49.8ms)
+Completed 500 Internal Server Error in 329ms (ActiveRecord: 23.2ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h2><%= @msg %></h2>
+    2: <h2>献立表作成</h2>
+    3: <p>作成する献立表の期間を入力してください</p>
+    4: <%= form_for @kondatelist, url: { action: "createKondate" } do |f| %>
+    5: <tr>
+    6:     <th>開始日</th><td><%= f.date_field :startDate %></td>
+    7:     &emsp;～&emsp;
+  
+app/views/kondatelists/createKondate.html.erb:4:in `_app_views_kondatelists_create_ondate_html_erb__825883858_104435280'
+Started GET "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:31:08 +0900
+Processing by KondatelistsController#createKondate as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.9ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (66.3ms)
+Completed 200 OK in 476ms (Views: 396.0ms | ActiveRecord: 33.5ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:31:19 +0900
+Processing by KondatelistsController#createKondate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vcN+8nMT/qnXUV6dGO+eu4eFLqt5JXANEDvwCMFc4Ul17v6UFW7gu7IblSrhoBbD3fF3q0hN7cfLgLg8VamT4g==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-04", "commit"=>"献立表作成"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (2.9ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mCACHE Kondatelist Load (0.0ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 388ms (Views: 331.4ms | ActiveRecord: 3.4ms)
+
+
+Started DELETE "/kondatelists/deleteKondate" for 127.0.0.1 at 2018-12-26 00:31:25 +0900
+Processing by KondatelistsController#deleteKondate as HTML
+  Parameters: {"authenticity_token"=>"cow1330Xh0Qoz9g6PAhqFFDBr738/ALrKMXNGNl/liG6obW5G2qZVk2FE43FR+JsCrX2vc2UnyHzfoUsTYrkig=="}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Destroy (10.7ms)[0m  [1m[31mDELETE FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:22
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  Rendered kondatelists/createKondate.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 372ms (Views: 347.6ms | ActiveRecord: 12.4ms)
+
+
+Started POST "/kondatelists/createKondate" for 127.0.0.1 at 2018-12-26 00:31:32 +0900
+Processing by KondatelistsController#createKondate as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O3nov53p9wtYevpHCF7BrYdSJE6hDVT3M4L6p3kgAGzzVGjZ+5TpGT0wMfDxEUnV3SZ9TpBlyT3oObKT7dVyxw==", "startDate"=>"2018-12-03", "endDate"=>"2018-12-05", "commit"=>"献立表作成"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mKondatelist Load (1.2ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/controllers/kondatelists_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (1.8ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-03', '2018-12-25 15:31:32', '2018-12-25 15:31:32')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.5ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-04', '2018-12-25 15:31:32', '2018-12-25 15:31:32')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[36mKondatelist Create (0.4ms)[0m  [1m[32mINSERT INTO `kondatelists` (`kondate_date`, `created_at`, `updated_at`) VALUES ('2018-12-05', '2018-12-25 15:31:32', '2018-12-25 15:31:32')[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/kondatelists_controller.rb:9
+  Rendering kondatelists/createKondate.html.erb within layouts/application
+  [1m[36mKondatelist Load (0.7ms)[0m  [1m[34mSELECT `kondatelists`.* FROM `kondatelists`[0m
+  ↳ app/views/kondatelists/createKondate.html.erb:12
+  Rendered kondatelists/createKondate.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 417ms (Views: 309.2ms | ActiveRecord: 29.9ms)
+
+

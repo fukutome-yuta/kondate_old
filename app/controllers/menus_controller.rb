@@ -2,12 +2,7 @@ class MenusController < ApplicationController
   def search
     if request.post? then
       @data = Menu.all
-      if params[:CreateKondateList] then
-        @kondatelist_data = Kondatelist.all
-        render "kondatelists/createKondate" and return
-      else
-        render "search" and return
-      end
+      render "search"
     end
   end
 
@@ -15,12 +10,7 @@ class MenusController < ApplicationController
     @data = Array.new
     if request.post? then
       @data = Menu.where('menu_name like ?', "%#{ params[:keyword] }%")
-      if params[:CreateKondateList] then
-        @kondatelist_data = Kondatelist.all
-        render "kondatelists/createKondate" and return
-      else
-        render "search" and return
-      end
+      render "search"
     end  
   end
 

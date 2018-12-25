@@ -1,13 +1,13 @@
 <h2><%= @msg %></h2>
 <h2>献立表作成</h2>
 <p>作成する献立表の期間を入力してください</p>
-<%= form_tag(controller: "kondatelists", action: "createKondate") do %>
+<%= form_tag( controller: "kondatelists", action: "createKondate" ) do %>
 <tr>
-    <th>開始日</th><td><%= date_field_tag "startDate" %></td>
+    <th>開始日</th><td><%= date_field_tag :startDate %></td>
     &emsp;～&emsp;
-    <th>終了日</th><td><%= date_field_tag "endDate" %></td>
+    <th>終了日</th><td><%= date_field_tag :endDate %></td>
 </tr>
-<%= submit_tag("献立表作成") %>
+<%= submit_tag "献立表作成" %>
 <% end %>
 <% if @kondatelist_data.present? %>
     <table border="1">
@@ -27,31 +27,29 @@
     <% end %>
     </table>
     <p><%= button_to "献立表削除", {controller: "kondatelists", action: "deleteKondate"}, data: {confirm: "削除しますか？"}, method: :delete %></p>
-    <h3>献立表に追加するメニューを選んでください</h3>
-    <p>料理名または食材名で検索</p>
-<%= form_tag( controller: "menus", action: "find" ) do %>
+    <h2>メニューリストから検索</h2>
+<p>料理名または食材名で検索してください</p>
+<%= form_tag( controller: "kondatelists", action: "updateKondate" ) do %>
     <%= text_field_tag("keyword") %>
-    <%= submit_tag("検索", name: "CreateKondateList" ) %>
+    <%= submit_tag("検索") %>
 <% end %>
-<p>全メニューリストから探す</p>
-<%= button_to "全メニュー表示", {controller: "menus", action: "search"}, name: "CreateKondateList" %>
+<p>登録されている全てのメニューを表示します</p>
+<%= button_to "全メニュー表示", { controller: "kondatelists", action: "updateKondate" }, name: "allmenu" %>
 <pre>
 <table border="1">
-    <% if @data.present? %>
+    <% if @menu_data.present? %>
         <tr>
             <th>メニュー名</th>
             <th>レシピリンク</th>
             <th>最後に作った日</th>
-            <th>作ったチェック</th>
-            <th>編集</th>
+            <th>追加</th>
         </tr>
-        <% @data.each do |obj| %>
+        <% @menu_data.each do |obj| %>
         <tr>
             <td><%= obj.menu_name %></td>
             <td><%= link_to "#{obj.url}","#{obj.url}" %></td>
             <td><%= obj.date %></td>
-            <td><%= check_box 'cocked', '', {:checked => obj.check}, true, false %></td>
-            <td><%= button_to "編集", {controller: "menus", action: "edit", :id => obj.id} %></td>
+            <td><%= button_to "追加", {controller: "menus", action: "edit", :id => obj.id} %></td>
         </tr>
         <% end %>
     <% end %>
