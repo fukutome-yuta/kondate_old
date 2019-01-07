@@ -17,8 +17,13 @@ class KondatelistsController < ApplicationController
     if request.post? then
       if params[:allmenu] then
         @menu_data = Menu.all
-      else
+      elsif params[:keyword]  then
         @menu_data = Menu.where('menu_name like ?', "%#{ params[:keyword] }%")
+      else
+        obj = Menu.find( params[:id] )
+        data = Kondatelist.find( params[:kondate_date] )
+        data.update_attributes( kondate_name: obj.menu_name, kondate_url: obj.url, kondate_id: obj.id )
+
       end
       @kondatelist_data = Kondatelist.all
       render "createKondate"
