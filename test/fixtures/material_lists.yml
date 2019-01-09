@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  menu_id: 1
+  material_name: MyText
+  quantity: 1.5
+  unit_id: 1
+
+two:
+  menu_id: 1
+  material_name: MyText
+  quantity: 1.5
+  unit_id: 1

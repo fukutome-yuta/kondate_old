@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'material_lists/create'
+  post 'material_lists/create'
+  get 'material_lists/update'
+  post 'material_lists/update'
+  get 'material_lists/delete'
   get 'kondatelists/createKondate'
   post 'kondatelists/createKondate'
   get 'kondatelists/updateKondate'

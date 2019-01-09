@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first
-Menu.create(menu_name:'肉じゃが', url:'sample1.com', date:'2018-12-05', check:'true')
-Menu.create(menu_name:'ロールキャベツ', url:'sample2.com', date:'2018-12-12', check:'false')
-Menu.create(menu_name:'豚の生姜焼き', url:'sample3.com', date:'2018-12-21', check:'false')
+Unit_list.create!(unit_name: 'g')
+Unit_list.create!(unit_name: 'ml')
+Unit_list.create!(unit_name: '個')
+Unit_list.create!(unit_name: '少々')

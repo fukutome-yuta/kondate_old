@@ -40,8 +40,8 @@ class MenusController < ApplicationController
     @add_data = Menu.new
     if request.post? then
       Menu.create(menu_params)
-      @msg = "メニューリストへ追加しました！"
-      render "search"
+      @menuData = Menu.find_by(menu_name: "#{menu_params[:menu_name]}")
+      render "material_lists/create"
     end  
   end
 
@@ -56,4 +56,10 @@ class MenusController < ApplicationController
   def menu_params
     params.require(:menu).permit(:menu_name, :url)
   end
+  def material_params
+    params.require(:menu).permit(
+      :menu_name, :url, :foundation, :tel,
+      material_lists_attributes: [:menu_id, :material_name, :quantity, :unit_id, :_destroy]
+    )
+end
 end

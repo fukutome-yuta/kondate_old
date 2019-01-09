@@ -1,4 +1,4 @@
-<h1><%= @msg %></h1>
+<h1><%= @menudata %></h1>
 <h2>メニューリストから検索</h2>
 <p>料理名または食材名で検索してください</p>
 <%= form_tag( controller: "menus", action: "find" ) do %>
@@ -15,7 +15,6 @@
             <th>メニュー名</th>
             <th>レシピリンク</th>
             <th>最後に作った日</th>
-            <th>作ったチェック</th>
             <th>編集</th>
         </tr>
         <% @data.each do |obj| %>
@@ -23,7 +22,6 @@
             <td><%= obj.menu_name %></td>
             <td><%= link_to "#{obj.url}","#{obj.url}" %></td>
             <td><%= obj.date %></td>
-            <td><%= check_box 'cocked', '', {:checked => obj.check}, true, false %></td>
             <td><%= button_to "編集", {controller: "menus", action: "edit", :id => obj.id} %></td>
         </tr>
         <% end %>

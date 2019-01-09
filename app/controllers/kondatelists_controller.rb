@@ -8,9 +8,11 @@ class KondatelistsController < ApplicationController
         (Date.parse(params[:startDate])..Date.parse(params[:endDate])).each do |data|
           Kondatelist.create(kondate_date: data)
         end
+        @kondatelist_data = Kondatelist.all
+        render "updateKondate"
       end
     end
-    @kondatelist_data = Kondatelist.all
+    
   end
 
   def updateKondate
@@ -23,11 +25,10 @@ class KondatelistsController < ApplicationController
         obj = Menu.find( params[:id] )
         data = Kondatelist.find( params[:kondate_date] )
         data.update_attributes( kondate_name: obj.menu_name, kondate_url: obj.url, kondate_id: obj.id )
-
       end
-      @kondatelist_data = Kondatelist.all
-      render "createKondate"
     end
+    @kondatelist_data = Kondatelist.all
+    render "updateKondate"
   end
 
   def deleteKondate
