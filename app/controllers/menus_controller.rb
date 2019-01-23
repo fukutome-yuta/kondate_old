@@ -41,7 +41,7 @@ class MenusController < ApplicationController
     if request.post? then
       Menu.create(menu_params)
       @menuData = Menu.find_by(menu_name: "#{menu_params[:menu_name]}")
-      render "material_lists/create"
+      render "material_lists/createMaterialList"
     end  
   end
 
@@ -58,7 +58,7 @@ class MenusController < ApplicationController
   end
   def material_params
     params.require(:menu).permit(
-      :menu_name, :url, :foundation, :tel,
+      :menu_name, :url, :data, :check,
       material_lists_attributes: [:menu_id, :material_name, :quantity, :unit_id, :_destroy]
     )
 end

@@ -1,14 +1,14 @@
+<%= form_for(@menuData, url:{controller: "material_lists", action: "createMaterialList"}) do |f|%>
 <table border="1">
 <tr>
     <th>メニュー名</th>
     <th>レシピリンク</th>
 </tr>
 <tr>
-    <td><%= @menuData.menu_name %></td>
-    <td><%= link_to "#{@menuData.url}","#{@menuData.url}" %></td>
+    <td><%= f.label @menuData.menu_name %></td>
+    <td><%= f.label link_to "#{@menuData.url}","#{@menuData.url}" %></td>
 </tr>
 </table>
-<%= form_for(@menuData, url:{controller: "material_lists", action: "create"}) do |f|%>
 <table border="1">
           <tbody>
             <tr>
@@ -18,10 +18,12 @@
                <th>Action</th>
             </tr>
             <%= f.nested_fields_for :material_lists, wrapper_tag: :tr do |q| %>
-                <td><%= q.text_field   :material_name,     class: 'form-control' %></td>
+            <tr>
+                <td><%= q.text_field :material_name, class: 'form-control' %></td>
                 <td><%= q.number_field :quantity, class: 'form-control' %></td>
-                <td><%= q.text_field   :unit_id,     class: 'form-control' %></td>
-                <td><%= q.remove_nested_fields_link 'Delete', role: 'button' %></td>
+                <td><%= q.text_field :unit_id, class: 'form-control' %></td>
+                <td><%= q.remove_nested_fields_link "Delete", class: 'btn btn-danger', role: 'button' %></td>
+            </tr>
             <% end %>
         </tbody>
       </table>

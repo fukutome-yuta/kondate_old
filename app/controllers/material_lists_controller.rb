@@ -1,10 +1,10 @@
 class MaterialListsController < ApplicationController
-  def create
+  def createMaterialList
   end
 
-  def update
+  def updateMaterialList
   end
 
-  def delete
+  def deleteMaterialList
   end
 end
