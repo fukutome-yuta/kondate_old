@@ -1,17 +1,42 @@
 <h2>メニューリストへ追加</h2>
 <P>リストへ追加するメニューの料理名とレシピページURLを入力してください</p>
 <%= form_for(@add_data, url:{controller: "menus", action: "add"}) do |f|%>
-    <table>
+    <div class="field">
         <tr>
             <th>料理名</th>
             <td><%= f.text_field :menu_name %></td>
-        </tr>            
+        </tr>
         <tr>
             <th>レシピURL</th>
             <td><%= f.text_field :url%></td>
         </tr>
-    </table>     
-    <tr><th></th>
-        <td><%= submit_tag("メニューリストへ追加") %></td>
-    </tr>
+    </div>
+<P>材料を入力してください</p>
+<div class="detail">
+    <%= link_to_add_association '行を追加', f, :material_lists,
+        data: {
+            association_insertion_node: '#material_lists',
+            association_insertion_method: 'append'
+        }
+    %>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>食材名</th>
+                <th>分量</th>
+                <th>単位</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    <%#</div>%>
+    <%#<div id='material_lists'>%>
+        <tbody id='material_lists'>
+            <%= f.fields_for :material_lists do |q| %>
+                <%= render :partial => "material_list_fields", :f => q %>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
+    <%= f.submit 'レシピを登録' %>
 <% end %>

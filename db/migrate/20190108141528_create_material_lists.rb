@@ -8,5 +8,8 @@ class CreateMaterialLists < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    add_index :material_lists, :menu_id
+    add_foreign_key :material_lists, :menus
   end
 end

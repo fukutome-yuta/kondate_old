@@ -39,9 +39,14 @@ class MenusController < ApplicationController
   def add
     @add_data = Menu.new
     if request.post? then
-      Menu.create(menu_params)
-      @menuData = Menu.find_by(menu_name: "#{menu_params[:menu_name]}")
-      render "material_lists/createMaterialList"
+      #menu = Menu.create(material_params)
+      #m = menu.material_lists.build
+      if menu = Menu.create(material_params)
+        render "search" and return
+      else
+        render "add" and return
+      end
+      render "search" and return
     end  
   end
 
