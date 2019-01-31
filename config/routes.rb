@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  get 'material_lists/createMaterialList'
-  post 'material_lists/createMaterialList'
-  get 'material_lists/updateMaterialList'
-  post 'material_lists/updateMaterialList'
-  get 'material_lists/deleteMaterialList'
+
   get 'kondatelists/createKondate'
   post 'kondatelists/createKondate'
   get 'kondatelists/updateKondate'
@@ -16,9 +12,6 @@ Rails.application.routes.draw do
   post 'kondatelists/showKondate'
   get 'menus/search'
   post 'menus/search'
-  get 'menus/edit'
-  get 'menus/find'
-  post 'menus/find'
   get 'users/index'
   get 'menus/edit_menu'
   post 'menus/edit_menu'
