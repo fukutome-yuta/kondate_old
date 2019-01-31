@@ -1,11 +1,11 @@
 class KondatelistsController < ApplicationController
   layout 'navmenu'
-  def createKondate
+  def createKondate #=>受け取った期間の献立表の雛形を作成する
     if request.post? then
       @kondatelist_data = Kondatelist.all
-      if @kondatelist_data.present? then
+      if @kondatelist_data.present? then #=>すでにKondateListが存在する場合はコメントを返す
         @msg = "すでに献立表が存在します。削除してから作り直してください！"
-      else
+      else #=>受け取った期間でKondateListを作成
         (Date.parse(params[:startDate])..Date.parse(params[:endDate])).each do |data|
           Kondatelist.create(kondate_date: data)
         end
@@ -18,11 +18,11 @@ class KondatelistsController < ApplicationController
 
   def updateKondate
     if request.post? then
-      if params[:allmenu] then
+      if params[:allmenu] then #=>Menuの検索結果を返す
         @menu_data = Menu.all
       elsif params[:keyword]  then
         @menu_data = Menu.where('menu_name like ?', "%#{ params[:keyword] }%")
-      else
+      else #=>Menuテーブルをidで検索しKondateListへ追加する
         obj = Menu.find( params[:id] )
         data = Kondatelist.find( params[:kondate_date] )
         data.update_attributes( kondate_name: obj.menu_name, kondate_url: obj.url, kondate_id: obj.id )
@@ -32,7 +32,7 @@ class KondatelistsController < ApplicationController
     render "updateKondate"
   end
 
-  def deleteKondate
+  def deleteKondate #=>KondateListとShoppingListを削除
     Kondatelist.delete_all
     ShoppingList.delete_all
     @msg = "献立表を削除しました！"
@@ -46,7 +46,7 @@ class KondatelistsController < ApplicationController
 
     if @shoppingList.present?
       render = "showKondate" and return
-    else
+    else #=>KondateList内のMenuに紐づくMaterialListをShoppingListへ登録し、食材名でまとめて分量の合計を出す
       @kondatelist.each do |k|
         data = MaterialList.where( menu_id: k.kondate_id )
         data.each do |d|
