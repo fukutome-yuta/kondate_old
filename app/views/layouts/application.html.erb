@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mymenu</title>
+    <title>Kondate</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,31 +9,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div align="center"><h1>KONDATE</h1></div>
-      <ul class="nav">
-        <li><%= link_to "Home", users_index_path %></li>      
-        <li><a href="#">献立表</a>
-          <ul>
-            <li><%= link_to "献立表作成", kondatelists_createKondate_path %></li>
-            <li><%= link_to "献立表更新", kondatelists_updateKondate_path %></li>
-            <li><%= link_to "献立表閲覧", kondatelists_showKondate_path %></li>
-          </ul>
-        </li>
-        <li><a href="#">メニューリスト</a>
-          <ul>
-            <li><%= link_to "新規作成", menus_add_path %></li>
-            <li><%= link_to "編集", menus_search_path %></li>
-          </ul>
-        </li>
-        <li><a href="#">レシピ検索</a>
-          <ul>
-            <li><a href="#">b1</a></li>
-            <li><a href="#">b1</a></li>
-          </ul>
-        </li>
-        <li><a href="#">使い方</a></li>
-        <li><a href="#">ログアウト</a></li>
-      </ul>
     <%= yield %>
   </body>
 </html>

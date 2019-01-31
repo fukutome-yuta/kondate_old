@@ -1,11 +1,11 @@
-<h1><%= @menudata %></h1>
+<div align="center">
 <h2>メニューリストから検索</h2>
-<p>料理名または食材名で検索してください</p>
-<%= form_tag( controller: "menus", action: "find" ) do %>
+<p>料理名または食材名で検索</p>
+<%= form_tag( controller: "menus", action: "search" ) do %>
     <%= text_field_tag("keyword") %>
     <%= submit_tag("検索") %>
 <% end %>
-<p>登録されている全てのメニューを表示します</p>
+<p>全メニューリストから検索</p>
 <%= button_to "全メニュー表示", {controller: "menus", action: "search"} %>
 <pre>
 <table border="1">
@@ -21,10 +21,11 @@
         <tr>
             <td><%= obj.menu_name %></td>
             <td><%= link_to "#{obj.url}","#{obj.url}" %></td>
-            <td><%= obj.date %></td>
-            <td><%= button_to "編集", {controller: "menus", action: "edit", :id => obj.id} %></td>
+            <td><%= obj.cook_date %></td>
+            <td><%= button_to "編集", {controller: "menus", action: "edit_menu", :id => obj.id} %></td>
         </tr>
         <% end %>
     <% end %>
 </table>
 </pre>
+</div>

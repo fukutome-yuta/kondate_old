@@ -1,8 +1,15 @@
 class MenusController < ApplicationController
+  layout 'navmenu'
   def search
     if request.post? then
-      @data = Menu.all
-      render "search"
+      if params[:keyword] then
+        @data = Menu.new
+        @data = Menu.where('menu_name like ?', "%#{ params[:keyword] }%")
+        render "search"
+      else
+        @data = Menu.all
+        render "search"
+      end
     end
   end
 
@@ -14,10 +21,12 @@ class MenusController < ApplicationController
     end  
   end
 
-  def edit
+  def edit_menu
+    @editMenu = Menu.new
     if request.post? then
-      @edit_data = Menu.find(params[:id])
-      render "edit"
+      @editMenu = Menu.find(params[:id])
+      #@materialData = MaterialList.where( menu_id: @editMenu.id )
+      render "edit_menu"
     end
   end
 
@@ -29,24 +38,21 @@ class MenusController < ApplicationController
       render "search"
     else
       obj = Menu.find(params[:id])
-      obj.update(menu_params)
-      obj.update_attributes( date: "", check: false )
+      obj.update(material_params)
+      obj.update_attributes( date: "" )
       @msg = "メニューリストを更新しました！"
       render "search"
     end
   end
 
-  def add
-    @add_data = Menu.new
+  def create_menu
+    @editMenu = Menu.new
     if request.post? then
-      #menu = Menu.create(material_params)
-      #m = menu.material_lists.build
-      if menu = Menu.create(material_params)
+      if Menu.create(material_params) then
         render "search" and return
       else
-        render "add" and return
+        render "create_menu" and return
       end
-      render "search" and return
     end  
   end
 
@@ -58,13 +64,13 @@ class MenusController < ApplicationController
   end
 
   private
-  def menu_params
-    params.require(:menu).permit(:menu_name, :url)
-  end
-  def material_params
-    params.require(:menu).permit(
-      :menu_name, :url, :data, :check,
-      material_lists_attributes: [:menu_id, :material_name, :quantity, :unit_id, :_destroy]
-    )
-end
+    def menu_params
+      params.require(:menu).permit(:menu_name, :url)
+    end
+    def material_params
+      params.require(:menu).permit(
+        :menu_name, :url, :cook_date,
+        material_lists_attributes: [:menu_id, :material_name, :quantity, :unit, :_destroy]
+      )
+    end
 end

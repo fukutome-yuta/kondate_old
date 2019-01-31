@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  s_name: MyText
+  s_quantity: 1.5
+  s_unit: MyText
+
+two:
+  s_name: MyText
+  s_quantity: 1.5
+  s_unit: MyText

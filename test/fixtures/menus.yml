@@ -3,11 +3,9 @@
 one:
   menu_name: MyText
   url: MyText
-  date: 2018-12-06
-  check: 1
+  cook_date: 2019-01-28
 
 two:
   menu_name: MyText
   url: MyText
-  date: 2018-12-06
-  check: 1
+  cook_date: 2019-01-28

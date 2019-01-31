@@ -1,11 +1,12 @@
-<h2><%= @msg %></h2>
+<div align="center">
 <h2>献立表作成</h2>
 <p>作成する献立表の期間を入力してください</p>
-<%= form_tag( controller: "kondatelists", action: "createKondate" ) do %>
-<tr>
-    <th>開始日</th><td><%= date_field_tag :startDate %></td>
-    &emsp;～&emsp;
-    <th>終了日</th><td><%= date_field_tag :endDate %></td>
-</tr>
-<%= submit_tag "献立表作成" %>
-<% end %>
+    <%= form_tag( controller: "kondatelists", action: "createKondate" ) do %>
+        <tr>
+            <th>開始日</th><td><%= date_field_tag :startDate %></td>
+            &emsp;～&emsp;
+            <th>終了日</th><td><%= date_field_tag :endDate %></td>
+        </tr>
+        <%= submit_tag "献立表作成" %>
+    <% end %>
+</div>

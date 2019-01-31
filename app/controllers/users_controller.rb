@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout 'application'
+  layout 'navmenu'
   before_action :authenticate_user!, only: :index
   def index
   end

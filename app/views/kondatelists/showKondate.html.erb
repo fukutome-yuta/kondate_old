@@ -1,2 +1,35 @@
-<h1>KondateLists#showKondate</h1>
-<p>Find me in app/views/kondate_lists/createKondate.html.erb</p>
+<div align="center">
+    <h3>献立表</h3>
+    <table border="1">
+        <tr>
+            <th>日付</th>
+            <th>料理名</th>
+            <th>レシピURL</th>
+        </tr>
+    <% @kondatelist.each do |data| %>
+        <tr>
+            <td><%= data.kondate_date %></td>
+            <td><%= data.kondate_name %></td>
+            <td><%= link_to "#{data.kondate_url}","#{data.kondate_url}" %></td>
+        </tr>
+    <% end %>
+    </table>
+    <h3>買い物リスト</h3>
+    <table border="1">
+        <tr>
+            <th>材料</th>
+            <th>分量</th>
+            <th>単位L</th>
+        </tr>
+    <% if @shoppingList.present? %>
+        <% @shoppingList.each do |s| %>
+            <tr>
+                <td><%= s.s_name %></td>
+                <td><%= s.total_quantity %></td>
+                <td><%= s.s_unit %></td>
+            </tr>
+        <% end %>
+    <% end %>
+    </table>
+    <%= button_to "削除", { controller: "kondatelists", action: "deleteKondate" }, data: { confirm: "削除してよろしいですか？" } %>
+</div>

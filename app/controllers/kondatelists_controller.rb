@@ -1,4 +1,5 @@
 class KondatelistsController < ApplicationController
+  layout 'navmenu'
   def createKondate
     if request.post? then
       @kondatelist_data = Kondatelist.all
@@ -32,12 +33,28 @@ class KondatelistsController < ApplicationController
   end
 
   def deleteKondate
-    obj = Kondatelist.all
-    obj.delete_all
+    Kondatelist.delete_all
+    ShoppingList.delete_all
     @msg = "献立表を削除しました！"
     render "createKondate"
   end
 
   def showKondate
+
+    @shoppingList = ShoppingList.all.select("s_name , sum(s_quantity) as total_quantity, s_unit").group( :s_name )
+    @kondatelist = Kondatelist.all
+
+    if @shoppingList.present?
+      render = "showKondate" and return
+    else
+      @kondatelist.each do |k|
+        data = MaterialList.where( menu_id: k.kondate_id )
+        data.each do |d|
+          ShoppingList.create(s_name: d.material_name, s_quantity: d.quantity, s_unit: d.unit)
+        end
+      end
+      @shoppingList = ShoppingList.all.select("s_name , sum(s_quantity) as total_quantity, s_unit").group( :s_name )
+    end
+      render = "showKondate" and return
   end
 end

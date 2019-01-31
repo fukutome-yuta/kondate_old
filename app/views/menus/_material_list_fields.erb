@@ -1,6 +1,6 @@
 <tr>
   <td><%= f.text_field :material_name %></td>
   <td><%= f.number_field :quantity %></td>
-  <td><%= f.select :unit_id, [["g", "1"], ["ml", "2"],  ["個", "3"], ["少々", "4"]], :prompt => "選択してください" %></td>
+  <td><%= f.select :unit, [["g"], ["ml"],  ["個"], ["少々"]], :prompt => "選択してください" %></td>
   <td><%= link_to_remove_association "行を削除", f %></td>
 </tr>

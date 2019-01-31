@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_08_141528) do
+ActiveRecord::Schema.define(version: 2019_01_30_214953) do
 
   create_table "kondatelists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "kondate_date"
@@ -22,25 +22,27 @@ ActiveRecord::Schema.define(version: 2019_01_08_141528) do
   end
 
   create_table "material_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "menu_id"
+    t.bigint "menu_id"
     t.text "material_name"
     t.float "quantity"
-    t.integer "unit_id"
+    t.text "unit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["menu_id"], name: "index_material_lists_on_menu_id"
   end
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "menu_name"
     t.text "url"
-    t.date "date"
-    t.boolean "check"
+    t.date "cook_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "unit_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "unit_name"
+  create_table "shopping_lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "s_name"
+    t.float "s_quantity"
+    t.text "s_unit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,4 +59,5 @@ ActiveRecord::Schema.define(version: 2019_01_08_141528) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "material_lists", "menus", name: "material_lists_ibfk_1"
 end

@@ -3,8 +3,7 @@ class CreateMenus < ActiveRecord::Migration[5.2]
     create_table :menus do |t|
       t.text :menu_name
       t.text :url
-      t.date :date
-      t.boolean :check
+      t.date :cook_date
 
       t.timestamps
     end

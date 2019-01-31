@@ -1,8 +1,7 @@
+<div align="center">
 <h2>メニューリスト編集</h2>
-<p>内容を編集</p>
-<pre>
-<% if @edit_data.id.present? then %>
-    <%= form_for(@edit_data, url:{controller: "menus", action: "update", id:@edit_data.id}) do |f|%>
+<% if @editMenu.id.present? then %>
+    <%= form_for(@editMenu, url:{controller: "menus", action: "update", id:@editMenu.id}) do |f|%>
         <table>
             <tr>
                 <th>料理名</th>
@@ -18,4 +17,4 @@
         </tr>
     <% end %>
 <% end %>
-</pre>
+</div>
